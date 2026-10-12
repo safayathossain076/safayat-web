@@ -1,0 +1,1437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Safayat's World</title>
+<meta name="description" content="Safayat's World: Md. Safayat Hossain, Eur Ing, rail infrastructure expert, environmental engineer and global consultant. Home of the 33% pledge and the Safayat's World Fund.">
+<meta name="author" content="Md. Safayat Hossain">
+<meta property="og:title" content="Safayat's World: From Rivers to Rails">
+<meta property="og:description" content="1,500 km of cable, 50 km of high-speed track, 29 turnouts, and a fund for unemployed founders and outstanding AI engineering projects.">
+<meta property="og:url" content="https://www.safayatho.com/">
+<meta property="og:image" content="https://www.safayatho.com/logo-mark.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E1418">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="logo-mark.png">
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one night-time rail corridor. Hero (river becomes rails) → departures board of impact → route map of the journey → lines of work → fund → join. Kilometre posts mark each section. */
+:root{
+  color-scheme: dark;
+  --ballast:#0E1418;      /* page ground: dark track ballast, slight teal bias */
+  --sleeper:#151E23;      /* raised surfaces */
+  --rail:#2A363D;         /* lines, borders */
+  --steel:#A9B7BD;        /* secondary text */
+  --chalk:#EEF2F0;        /* primary text */
+  --signal:#FFE45C;       /* accent: light signal yellow */
+  --river:#5FC7CF;        /* secondary accent: water */
+  --go:#7BD389;           /* status: open / green signal */
+  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter:clamp(16px,4vw,48px);
+  --max:1180px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ballast);color:var(--chalk);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.02;letter-spacing:-0.02em}
+p{margin:0}
+.mono{font-family:var(--f-mono)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ballast) 82%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rail)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:-0.01em}
+.brand svg{flex:none}
+.wm{display:grid;line-height:1}
+.wm1{font-family:var(--f-display);font-weight:800;font-size:17px;letter-spacing:.06em}
+.wm2{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.52em;color:var(--signal);margin-top:4px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--steel)}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--chalk)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--rail);background:transparent;color:var(--chalk);cursor:pointer;font-family:var(--f-body);transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{border-color:var(--steel);transform:translateY(-1px)}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:#1A1204}
+.btn.primary:hover{background:#FFF08A}
+.nav .btn{padding:9px 16px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* km post section label */
+.km{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
+.km::before{content:"";width:10px;height:10px;border:2px solid var(--signal);border-radius:2px;transform:rotate(45deg)}
+section{padding-block:clamp(72px,10vw,128px);border-top:1px solid var(--rail)}
+.sec-head{display:grid;gap:18px;max-width:820px;margin:0 auto 48px;text-align:center;justify-items:center}
+.sec-head h2{font-size:clamp(36px,5.4vw,64px);font-weight:800}
+.sec-head p{color:var(--steel);font-size:18px;max-width:62ch}
+
+/* hero */
+.hero{position:relative;border-top:0;padding-block:clamp(56px,8vw,96px) 0;overflow:hidden}
+.hero-center{display:grid;justify-items:center;text-align:center;gap:22px;max-width:980px;margin-inline:auto}
+.hero-center .portrait{margin-bottom:0}
+.id-plate{display:grid;justify-items:center;gap:6px;margin:4px 0 22px;padding:16px 26px;border:1px solid color-mix(in srgb,var(--signal) 35%,var(--rail));border-radius:4px;background:color-mix(in srgb,var(--sleeper) 70%,transparent);backdrop-filter:blur(6px);position:relative}
+.id-plate::before,.id-plate::after{content:"";position:absolute;width:10px;height:10px;border:2px solid var(--signal)}
+.id-plate::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.id-plate::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.ip-name{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.01em}
+.ip-title{color:var(--signal)}
+.ip-role{display:flex;align-items:center;font-weight:600;font-size:15.5px}
+.ip-co{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;color:var(--steel)}
+.hero h1{font-size:clamp(52px,9vw,128px);font-weight:800;letter-spacing:-0.045em;line-height:.9}
+.hero h1 .r{color:var(--river)}
+.hero h1 .t{color:var(--signal)}
+.hero .who{margin-top:6px;font-size:clamp(18px,2vw,21px);color:var(--steel);max-width:62ch}
+.hero .who strong{color:var(--chalk);font-weight:600}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:10px}
+.id-card{border:1px solid var(--rail);border-radius:18px;background:var(--sleeper);padding:24px;display:grid;gap:16px}
+.id-card .row{display:flex;justify-content:space-between;gap:16px;font-size:14px;border-bottom:1px dashed var(--rail);padding-bottom:12px}
+.id-card .row:last-child{border:0;padding:0}
+.id-card .row span:first-child{color:var(--steel);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.id-card .row span:last-child{text-align:right;font-weight:500}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--go);margin-right:6px;box-shadow:0 0 0 4px color-mix(in srgb,var(--go) 22%,transparent)}
+#track{display:block;width:100%;height:240px;margin-top:48px}
+.track-labels{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);padding-bottom:28px}
+@media (max-width:900px){#track{height:170px;margin-top:36px}}
+
+/* departures board */
+.board{border:1px solid var(--rail);border-radius:20px;background:#0A0F12;overflow:hidden}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid var(--rail);font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);flex-wrap:wrap}
+.board-top b{color:var(--signal);font-weight:600}
+.board-row{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr) auto;gap:24px;align-items:center;padding:18px 24px;border-bottom:1px solid #1B252B}
+.board-row:last-child{border-bottom:0}
+.flap{font-family:var(--f-mono);font-weight:600;font-size:clamp(26px,3.6vw,40px);color:var(--signal);letter-spacing:.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.board-row .what{font-size:16px}
+.board-row .what small{display:block;color:var(--steel);font-size:13.5px;margin-top:2px}
+.status{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:6px;border:1px solid var(--rail);color:var(--steel);white-space:nowrap}
+.status.ontrack{color:var(--go);border-color:color-mix(in srgb,var(--go) 40%,transparent)}
+@media (max-width:640px){.board-row{grid-template-columns:1fr;gap:6px}.status{justify-self:start}}
+
+/* route map */
+.route{position:relative;border:1px solid var(--rail);border-radius:20px;background:var(--sleeper);padding:28px}
+.route-svg-wrap{overflow-x:auto}
+.route svg{display:block;width:100%;min-width:640px;height:auto}
+.stop{cursor:pointer}
+.stop circle.ring{transition:r .2s}
+.stop:hover circle.ring,.stop.active circle.ring{r:15}
+.stop text{font-family:var(--f-mono)}
+.stop-detail{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:32px;margin-top:24px;padding-top:24px;border-top:1px solid var(--rail)}
+.stop-detail .when{font-family:var(--f-mono);color:var(--signal);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.stop-detail h3{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-top:8px}
+.stop-detail .place{color:var(--steel);margin-top:6px;font-size:15px}
+.stop-detail p{color:var(--chalk);max-width:62ch}
+.stop-detail ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.stop-detail li{display:flex;gap:12px;color:var(--steel);font-size:15.5px}
+.stop-detail li::before{content:"";flex:none;width:6px;height:6px;margin-top:10px;background:var(--river);border-radius:1px}
+.route-hint{font-family:var(--f-mono);font-size:12px;color:var(--steel);letter-spacing:.08em;margin-top:12px}
+@media (max-width:760px){.stop-detail{grid-template-columns:1fr;gap:12px}.route{padding:18px}}
+
+/* lines of work */
+.lines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rail);border:1px solid var(--rail);border-radius:20px;overflow:hidden}
+.line{background:color-mix(in srgb,var(--ballast) 82%,transparent);padding:32px;display:grid;gap:14px;align-content:start}
+.line .tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lc)}
+.line h3{font-size:30px;font-weight:600}
+.line p{color:var(--steel)}
+.line .big{font-family:var(--f-mono);font-size:15px;color:var(--chalk);border-top:1px solid var(--rail);padding-top:14px;margin-top:6px}
+.line .big b{color:var(--lc);font-weight:600}
+@media (max-width:760px){.lines{grid-template-columns:1fr}}
+
+/* projects table */
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;padding:9px 16px;border-radius:999px;border:1px solid var(--rail);background:transparent;color:var(--steel);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--chalk);color:var(--ballast);border-color:var(--chalk)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rail);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:620px}
+th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);text-align:left;font-weight:400;padding:14px 18px;border-bottom:1px solid var(--rail);background:var(--sleeper)}
+td{padding:16px 18px;border-bottom:1px solid #1B252B;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.k{font-family:var(--f-mono);color:var(--signal);white-space:nowrap;font-variant-numeric:tabular-nums}
+td .sub{display:block;color:var(--steel);font-size:13.5px}
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.award{border:1px solid var(--rail);border-radius:16px;padding:22px;display:grid;gap:10px;align-content:start}
+.award .yr{font-family:var(--f-mono);font-size:12px;color:var(--signal);letter-spacing:.1em}
+.award h3{font-family:var(--f-body);font-size:18px;font-weight:600;letter-spacing:0;line-height:1.3}
+.award p{color:var(--steel);font-size:14.5px}
+.award.feature{grid-column:span 1;background:var(--sleeper)}
+@media (max-width:900px){.awards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.awards{grid-template-columns:1fr}}
+
+/* fund */
+.fund{background:radial-gradient(1000px 500px at 85% 0%,color-mix(in srgb,var(--signal) 9%,transparent),transparent 60%)}
+.grants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grant{border:1px solid var(--rail);border-radius:20px;padding:28px;display:grid;gap:16px;align-content:start;background:var(--sleeper)}
+.grant.lead{border-color:color-mix(in srgb,var(--signal) 55%,var(--rail))}
+.grant .state{display:flex;align-items:center;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--go)}
+.grant .state.soon{color:var(--steel)}
+.grant .state.soon .dot{background:var(--steel);box-shadow:none}
+.grant h3{font-size:28px;font-weight:800}
+.grant p{color:var(--steel);font-size:15.5px}
+.grant dl{margin:0;display:grid;gap:10px;border-top:1px solid var(--rail);padding-top:16px}
+.grant dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.grant dd{margin:2px 0 0;font-size:15px}
+@media (max-width:980px){.grants{grid-template-columns:1fr}}
+.tracks-title{text-align:center;margin:56px 0 22px;font-size:clamp(24px,3vw,32px);font-weight:600}
+.tracks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.trk{border:1px solid var(--rail);border-radius:16px;padding:20px;display:grid;gap:10px;align-content:start}
+.trk .x{font-family:var(--f-mono);font-size:13px;color:var(--signal)}
+.trk h4{margin:0;font-family:var(--f-display);font-size:21px;font-weight:600;line-height:1.1}
+.trk p{color:var(--steel);font-size:14px}
+@media (max-width:980px){.tracks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.tracks{grid-template-columns:1fr}}
+
+/* grant finder */
+.finder{margin-top:56px;border:1px solid var(--rail);border-radius:20px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;background:#0A0F12}
+.finder h3{font-size:28px;font-weight:800}
+.finder fieldset{border:0;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.finder legend{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{padding:9px 14px;border-radius:999px;border:1px solid var(--rail);cursor:pointer;font-size:14.5px;color:var(--steel)}
+.chips input:checked+label{border-color:var(--signal);color:var(--chalk);background:color-mix(in srgb,var(--signal) 14%,transparent)}
+.chips input:focus-visible+label{outline:2px solid var(--signal);outline-offset:2px}
+.result{border-left:2px solid var(--signal);padding-left:24px;display:grid;gap:12px;align-content:center}
+.result .lbl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal)}
+.result h4{margin:0;font-family:var(--f-display);font-size:30px;font-weight:800;line-height:1.05}
+.result p{color:var(--steel)}
+@media (max-width:820px){.finder{grid-template-columns:1fr}.result{border-left:0;border-top:2px solid var(--signal);padding:20px 0 0}}
+
+/* join */
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tier{border:1px solid var(--rail);border-radius:16px;padding:20px;display:grid;gap:10px;align-content:start}
+.tier h3{font-family:var(--f-body);font-size:17px;font-weight:600;letter-spacing:0;line-height:1.25}
+.tier p{color:var(--steel);font-size:14px}
+.tier .rec{font-family:var(--f-mono);font-size:11.5px;color:var(--river);letter-spacing:.04em;border-top:1px solid var(--rail);padding-top:10px}
+@media (max-width:1060px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.tiers{grid-template-columns:1fr}}
+.promise{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;color:var(--steel);font-size:15px}
+.promise b{color:var(--chalk);font-weight:600}
+
+/* research + media */
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+.pubs{list-style:none;margin:0;padding:0;display:grid}
+.pubs li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--rail)}
+.pubs li:first-child{padding-top:0}
+.pubs .y{font-family:var(--f-mono);color:var(--signal);font-size:14px}
+.pubs a{text-decoration-color:var(--rail);text-underline-offset:3px}
+.pubs a:hover{text-decoration-color:var(--signal)}
+.pubs .v{display:block;color:var(--steel);font-size:14px;margin-top:4px}
+.media h3{font-size:22px;font-weight:600;margin-bottom:14px}
+.media ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.media li{font-size:15px;color:var(--steel)}
+.media li b{color:var(--chalk);font-weight:500}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.langs span{font-family:var(--f-mono);font-size:12.5px;padding:6px 10px;border:1px solid var(--rail);border-radius:6px;color:var(--steel)}
+.langs span b{color:var(--chalk);font-weight:600}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.contact h2{font-size:clamp(44px,7.5vw,104px);font-weight:800;letter-spacing:-0.04em;line-height:.92}
+.contact h2 span{color:var(--signal)}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.mail code{font-family:var(--f-mono);font-size:clamp(16px,2.2vw,22px);padding:12px 16px;border:1px solid var(--rail);border-radius:12px;user-select:all;word-break:break-all}
+#copyNote{font-family:var(--f-mono);font-size:12.5px;color:var(--go);min-height:1em}
+@media (max-width:760px){.contact{grid-template-columns:1fr}}
+/* hero portrait */
+.hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:8px;font-size:14px;color:var(--steel)}
+.hero-facts b{color:var(--chalk);font-family:var(--f-mono);font-weight:600;margin-right:6px}
+.portrait{position:relative;margin:0;justify-self:center;width:min(320px,80vw);aspect-ratio:1;max-width:100%}
+.photo{position:absolute;inset:13%;border-radius:50%;overflow:hidden;background:var(--sleeper);border:3px solid var(--ballast);box-shadow:0 0 0 2px var(--signal),0 30px 80px -30px color-mix(in srgb,var(--river) 60%,transparent);animation:float 6s ease-in-out infinite}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;animation:reveal 1.4s cubic-bezier(.2,.7,.2,1) both}
+.monogram{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:6px;background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--river) 30%,var(--sleeper)),var(--sleeper) 70%)}
+.monogram span{font-family:var(--f-display);font-weight:800;font-size:clamp(64px,9vw,104px);letter-spacing:-.04em;line-height:1;color:var(--chalk)}
+.monogram small{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.orbit{position:absolute;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--signal) 55%,transparent)}
+.orbit.o1{inset:4%;animation:spin 18s linear infinite}
+.orbit.o2{inset:-2%;border-color:color-mix(in srgb,var(--river) 45%,transparent);border-style:dotted;animation:spin 28s linear infinite reverse}
+.orbit i{position:absolute;top:-7px;left:calc(50% - 7px);width:14px;height:14px;border-radius:4px;background:var(--signal);box-shadow:0 0 18px var(--signal)}
+.orbit i.drop{border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--river);box-shadow:0 0 18px var(--river);top:auto;bottom:-7px}
+.now-chip{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);white-space:nowrap;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px;background:var(--ballast);border:1px solid var(--rail);display:flex;align-items:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes reveal{from{clip-path:circle(0% at 50% 50%);filter:saturate(0)}to{clip-path:circle(75% at 50% 50%);filter:saturate(1)}}
+@media (max-width:900px){.portrait{width:min(280px,78vw)}.now-chip{font-size:12px;white-space:normal;text-align:center;width:max-content;max-width:100%}}
+@media (prefers-reduced-motion:reduce){.orbit,.photo,.photo img{animation:none}}
+
+/* pledge */
+.pledge{background:radial-gradient(800px 400px at 50% 0%,color-mix(in srgb,var(--signal) 8%,transparent),transparent 70%)}
+.pledge-grid{display:grid;justify-items:center;text-align:center;max-width:980px}
+.pledge-grid>div{width:100%;display:grid;justify-items:center}
+.pledge-grid .lifebar{width:100%}
+.pledge-grid .pledge-list{width:100%;text-align:left}
+.shirt{position:relative;max-width:380px;width:100%;justify-self:center}
+.shirt svg{display:block}
+.shirt-print{position:absolute;left:0;right:0;top:40%;display:grid;justify-items:center;gap:2px}
+.pct{font-family:var(--f-display);font-weight:800;font-size:clamp(64px,9vw,96px);letter-spacing:-.05em;line-height:.9;color:var(--signal)}
+.pct-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--chalk)}
+.pledge-h{font-size:clamp(34px,4.6vw,56px);font-weight:800;margin-top:18px}
+.pledge-p{color:var(--steel);font-size:18px;margin-top:18px;max-width:58ch}
+.lifebar{display:flex;margin-top:28px;height:52px;border-radius:12px;overflow:hidden;border:1px solid var(--rail);font-family:var(--f-mono);font-size:12px;letter-spacing:.04em}
+.lb-fill{flex:0 0 33%;background:var(--signal);color:#1A1204;display:flex;align-items:center;padding:0 14px;font-weight:600;transform-origin:left;animation:grow 1.6s cubic-bezier(.2,.7,.2,1) both .3s;min-width:0}
+.lb-rest{flex:1;background:var(--sleeper);color:var(--steel);display:flex;align-items:center;justify-content:flex-end;padding:0 14px;min-width:0}
+.lifebar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes grow{from{transform:scaleX(.02)}to{transform:scaleX(1)}}
+.pledge-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.pledge-list div{border-top:1px solid var(--rail);padding-top:12px;display:grid;gap:4px}
+.pledge-list b{font-weight:600}
+.pledge-list span{color:var(--steel);font-size:14px}
+@media (max-width:900px){.pledge-grid{grid-template-columns:1fr;gap:28px}.shirt{max-width:280px}.pledge-list{grid-template-columns:1fr}}
+@media (max-width:560px){.lb-rest span{display:none}}
+@media (prefers-reduced-motion:reduce){.lb-fill{animation:none}}
+
+/* rail project cards */
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.proj{border:1px solid var(--rail);border-radius:16px;padding:22px;display:grid;gap:10px;align-content:start;background:var(--sleeper)}
+.proj-tag{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.proj h4{margin:0;font-family:var(--f-display);font-size:22px;font-weight:600;line-height:1.15}
+.proj-soon{font-size:13.5px;color:var(--steel);border-top:1px dashed var(--rail);padding-top:10px}
+@media (max-width:860px){.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.proj-grid{grid-template-columns:1fr}}
+
+/* consulting */
+.earth-stage{position:relative;display:grid;place-items:center;margin:-20px auto 4px;max-width:700px}
+.earth-stage canvas{width:100%;height:auto;aspect-ratio:1;display:block}
+.consult-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin:20px 0 44px}
+.consult-cta .any{font-family:var(--f-mono);font-size:12.5px;color:var(--river)}
+.services{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.services .svc{flex:0 1 350px}
+.svc{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:start;background:color-mix(in srgb,var(--sleeper) 75%,transparent);border:1px solid var(--rail);border-radius:16px;padding:20px 22px;backdrop-filter:blur(4px)}
+.svc-n{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:14px;color:var(--signal);border:1px solid color-mix(in srgb,var(--signal) 45%,var(--rail))}
+.svc h4{margin:0;font-family:var(--f-display);font-size:21px;font-weight:600}
+.svc p{color:var(--steel);font-size:15px;margin-top:4px}
+.globe-card{border:1px solid var(--rail);border-radius:20px;background:#0A0F12;padding:24px;display:grid;gap:18px;justify-items:center}
+#globe{width:min(320px,100%);height:auto;aspect-ratio:1}
+.countries{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:820px;margin-inline:auto}
+.countries span{font-family:var(--f-mono);font-size:12.5px;padding:6px 10px;border:1px solid var(--rail);border-radius:6px;color:var(--chalk)}
+.countries .any{color:var(--river);border-color:color-mix(in srgb,var(--river) 40%,var(--rail))}
+
+
+/* apply */
+.chips.vertical{flex-direction:column;align-items:stretch}
+.chips.vertical label{border-radius:12px;padding:12px 16px}
+.trk-s{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--river);border:1px solid color-mix(in srgb,var(--river) 35%,var(--rail));border-radius:6px;padding:4px 8px;justify-self:start}
+.trk-s.rh{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,var(--rail))}
+.apply-grid{display:grid;gap:28px;max-width:760px;margin-inline:auto}
+#apply .sec-head{margin-inline:auto;text-align:center;justify-items:center}
+.apply-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;border:1px solid var(--rail);border-radius:20px;padding:28px;background:var(--sleeper)}
+.field{display:grid;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label,.flabel{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.field input[type=text],.field input[type=email],.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--chalk);background:var(--ballast);border:1px solid var(--rail);border-radius:10px;padding:12px 14px}
+.field textarea{resize:vertical;min-height:120px;line-height:1.5}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--steel) 50%),linear-gradient(135deg,var(--steel) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--signal);outline-offset:1px;border-color:transparent}
+.field [aria-invalid="true"]{border-color:#E5735B}
+.field.check{grid-template-columns:auto 1fr;align-items:start;gap:12px}
+.field.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--signal)}
+.field.check label{font-family:var(--f-body);font-size:14.5px;letter-spacing:0;text-transform:none;color:var(--steel)}
+.hint{font-family:var(--f-mono);font-size:11.5px;color:var(--steel);justify-self:end}
+.apply-form .field.full>.btn{justify-self:start}
+section[id]{scroll-margin-top:64px}
+.form-error{grid-column:1/-1;color:#F08A73;font-size:14.5px;margin:0;min-height:0}
+.form-error:empty{display:none}
+.apply-side{border:1px solid var(--rail);border-radius:20px;padding:24px 28px;background:color-mix(in srgb,var(--sleeper) 70%,transparent)}
+.next{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:14px;counter-reset:n}
+.next{position:relative}
+.next::before{content:"";position:absolute;left:10.5px;top:12px;bottom:12px;width:1px;background:linear-gradient(var(--signal),color-mix(in srgb,var(--signal) 10%,transparent))}
+.next li b{margin-right:6px}
+.next li{position:relative;display:block;padding-left:40px;gap:10px;color:var(--steel);font-size:15.5px;counter-increment:n}
+.next li::before{position:absolute;left:0;top:1px;content:counter(n);font-family:var(--f-mono);font-size:12px;color:var(--ballast);background:var(--signal);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:1px}
+.next li b{color:var(--chalk);font-weight:600}
+.small{color:var(--steel);font-size:14.5px;margin-top:18px}
+.sent-copy{white-space:pre-wrap;word-break:break-word;font-family:var(--f-mono);font-size:12.5px;line-height:1.55;color:var(--chalk);background:var(--ballast);border:1px solid var(--rail);border-radius:12px;padding:14px;margin:14px 0 0;max-height:260px;overflow:auto;user-select:all}
+
+@media (max-width:560px){.apply-form{grid-template-columns:1fr;padding:20px}}
+footer{border-top:1px solid var(--rail);padding-block:28px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--steel)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer a{text-decoration:none}
+
+/* galaxy backdrop */
+#galaxy{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+main,footer{position:relative;z-index:1}
+section{border-top-color:color-mix(in srgb,var(--rail) 60%,transparent)}
+.hero h1{text-shadow:0 0 40px color-mix(in srgb,var(--river) 25%,transparent)}
+
+/* AI photo effects */
+.portrait{transition:transform .25s ease-out;transform-style:preserve-3d}
+#photoFx{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;pointer-events:none}
+.scan{position:absolute;left:0;right:0;height:26%;top:-26%;background:linear-gradient(180deg,transparent,rgba(95,199,207,.18) 70%,rgba(255,255,255,.55) 96%,transparent);animation:scan 4.6s cubic-bezier(.5,0,.5,1) infinite;mix-blend-mode:screen;pointer-events:none}
+@keyframes scan{to{top:100%}}
+.photo img{animation:reveal 1.4s cubic-bezier(.2,.7,.2,1) both,glitch 7s 2.4s steps(1) infinite}
+@keyframes glitch{0%,90%,100%{transform:none;filter:none}91%{transform:translate(-4px,1px);filter:drop-shadow(4px 0 0 rgba(255,40,120,.55)) drop-shadow(-4px 0 0 rgba(0,240,255,.55))}93%{transform:translate(3px,-1px);filter:hue-rotate(60deg) saturate(1.5)}95%{transform:translate(-1px,0);filter:contrast(1.3)}}
+.hud{position:absolute;inset:7%;pointer-events:none}
+.hud i{position:absolute;width:26px;height:26px;border:2px solid var(--signal);opacity:.85;animation:hudp 2.4s ease-in-out infinite}
+.hud i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}
+.hud i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}
+.hud i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}
+.hud i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+@keyframes hudp{50%{opacity:.35}}
+.hud span{position:absolute;top:-22px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;color:var(--signal)}
+.hud-l{left:0}.hud-r{right:0;color:var(--river)!important}
+@media (prefers-reduced-motion:reduce){.scan,.photo img,.hud i{animation:none}.scan{display:none}}
+
+/* clickable project cards + modal */
+button.proj{font:inherit;color:inherit;text-align:left;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
+button.proj:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--signal) 55%,var(--rail));box-shadow:0 16px 40px -20px color-mix(in srgb,var(--signal) 50%,transparent)}
+.proj-thumb{height:120px;margin:-22px -22px 6px;background:linear-gradient(135deg,color-mix(in srgb,var(--river) 22%,var(--sleeper)),var(--ballast));display:grid;place-items:center;position:relative;overflow:hidden}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.proj-thumb svg{width:64px;height:64px;opacity:.7}
+.proj-thumb .count{position:absolute;right:10px;bottom:8px;font-family:var(--f-mono);font-size:11px;color:var(--chalk);background:rgba(14,20,24,.75);padding:3px 7px;border-radius:4px}
+.proj-open{font-family:var(--f-mono);font-size:12px;color:var(--signal);letter-spacing:.06em}
+.proj-meta{font-size:13.5px;color:var(--steel)}
+.proj.slot{border-style:dashed;cursor:default;background:transparent}
+.proj.slot:hover{transform:none;box-shadow:none;border-color:var(--rail)}
+.proj-hint{font-family:var(--f-mono);font-size:12px;color:var(--steel);text-align:center;margin-top:16px}
+.tabs.center{justify-content:center}
+.pmodal{padding:0;border:1px solid color-mix(in srgb,var(--signal) 40%,var(--rail));border-radius:18px;background:var(--sleeper);color:var(--chalk);width:min(980px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto}
+.pmodal::backdrop{background:rgba(5,8,10,.78);backdrop-filter:blur(6px)}
+.pmodal[open]{animation:pm .3s cubic-bezier(.2,.7,.2,1)}
+@keyframes pm{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.pm-inner{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);position:relative}
+.pm-close{position:absolute;right:12px;top:10px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--rail);background:var(--ballast);color:var(--chalk);font-size:24px;line-height:1;cursor:pointer}
+.pm-gallery{position:relative;background:#070B0D;display:grid;grid-template-rows:1fr auto}
+.pm-stage{aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden}
+.pm-stage img{width:100%;height:100%;object-fit:cover;display:block}
+.pm-empty{display:grid;justify-items:center;gap:10px;color:var(--steel);font-family:var(--f-mono);font-size:12.5px;text-align:center;padding:20px}
+.pm-empty svg{width:90px;height:90px;opacity:.6}
+.pm-nav{position:absolute;top:40%;width:42px;height:42px;border-radius:50%;border:1px solid var(--rail);background:rgba(14,20,24,.8);color:var(--chalk);font-size:24px;cursor:pointer}
+.pm-nav.prev{left:12px}.pm-nav.next{right:12px}
+.pm-thumbs{display:flex;gap:6px;padding:8px;overflow-x:auto}
+.pm-thumbs button{flex:0 0 64px;height:48px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;background:var(--ballast)}
+.pm-thumbs button[aria-current="true"]{border-color:var(--signal)}
+.pm-thumbs img{width:100%;height:100%;object-fit:cover}
+.pm-body{padding:30px 28px;display:grid;gap:12px;align-content:start}
+.pm-body h3{font-size:clamp(26px,3vw,34px);font-weight:800}
+.pm-meta{font-family:var(--f-mono);font-size:12.5px;color:var(--river)}
+.pm-sum{color:var(--steel)}
+.pm-list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.pm-list li{display:flex;gap:10px;font-size:15px}
+.pm-list li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;background:var(--signal)}
+@media (max-width:760px){.pm-inner{grid-template-columns:1fr}.pm-body{padding:22px 20px}}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<canvas id="galaxy" aria-hidden="true"></canvas>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Safayat's World, home">
+      <svg width="38" height="38" viewBox="0 0 120 120" aria-hidden="true"><defs><mask id="mnav" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"></rect><path d="M60 56.6C73 62 85 68 85 81C85 102 46 105 31 91" stroke="#000" stroke-width="9" fill="none"></path></mask></defs><rect x="4" y="4" width="112" height="112" rx="3" fill="#0E1418"></rect><g mask="url(#mnav)"><path d="M61 57C73 62 85 68 85 81C85 102 46 105 33 93" stroke="#FFE45C" stroke-width="26" stroke-dasharray="2.6 5.4" opacity=".45" fill="none"></path><path d="M61 57C73 62 85 68 85 81C85 102 46 105 33 93" stroke="#FFE45C" stroke-width="18" fill="none"></path></g><path d="M86 30C80 19 40 17 37 38C35.5 49 47 53 61 57" stroke="#5FC7CF" stroke-width="18" fill="none"></path><circle cx="86" cy="30" r="9" fill="#5FC7CF"></circle></svg>
+      <span class="wm"><span class="wm1">SAFAYAT&#8217;S</span><span class="wm2">WORLD</span></span>
+    </a>
+    <ul>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#fund">The Fund</a></li>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn primary" href="#apply">Apply for a grant</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-center">
+        <figure class="portrait" aria-label="Portrait of Md. Safayat Hossain">
+          <div class="orbit o1" aria-hidden="true"><i class="train"></i></div>
+          <div class="orbit o2" aria-hidden="true"><i class="drop"></i></div>
+          <div class="photo">
+            <img id="photo" src="photo.jpg" alt="Md. Safayat Hossain" onerror="this.hidden=true;document.getElementById('monogram').hidden=false">
+            <div id="monogram" class="monogram" hidden><span>SH</span><small>Photo coming soon</small></div>
+            <canvas id="photoFx" width="480" height="480" aria-hidden="true"></canvas>
+            <div class="scan" aria-hidden="true"></div>
+          </div>
+          <div class="hud" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="hud-l">AI VISION</span><span class="hud-r" id="hudR">RAIL · WATER</span></div>
+        </figure>
+        <div class="id-plate">
+          <span class="ip-name"><span class="ip-title">EUR ING.</span> Md. Safayat Hossain</span>
+          <span class="ip-role"><i class="dot" aria-hidden="true"></i>Head of Rail Infrastructure Development</span>
+          <span class="ip-co">Emser Bahnbau GmbH, Koblenz, Germany</span>
+        </div>
+        <span class="km">km 0.0 · Safayat's World</span>
+        <h1>From <span class="r">rivers</span><br>to <span class="t">rails.</span></h1>
+        <p class="who">Rail infrastructure expert, environmental engineer and global consultant. From water systems in Bangladesh to high-speed track in Germany, and now funding the people who build what comes next.</p>
+        <div class="cta">
+          <a class="btn primary" href="#impact">See the impact ↓</a>
+          <a class="btn" href="#fund">Explore the Fund</a>
+        </div>
+        <div class="hero-facts">
+          <span><b>Eur Ing</b> FEANI 2025</span>
+          <span><b>ASCE</b> New Face of Civil Engineering 2024</span>
+          <span><b>Ph.D.</b> Civil &amp; Environmental Eng., exp. 2027</span>
+        </div>
+      </div>
+    </div>
+    <canvas id="track" aria-label="Animation of a winding river that straightens into railway tracks" role="img"></canvas>
+    <div class="wrap track-labels" aria-hidden="true"><span>Dhaka · water</span><span>Samsun · waste → energy</span><span>Koblenz · high-speed rail</span></div>
+  </section>
+
+  <!-- IMPACT BOARD -->
+  <section id="impact">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 1.0 · Impact</span>
+        <h2>Safayat's World, on the board.</h2>
+        <p>Engineering is measured in what stays built. These are the numbers behind the work.</p>
+      </div>
+      <div class="board" role="table" aria-label="Impact figures">
+        <div class="board-top" role="row"><span role="columnheader">Figure</span><span role="columnheader">Delivered</span><span role="columnheader"><b>●</b> Status</span></div>
+        <div class="board-row" role="row"><span class="flap" role="cell" data-flap="1,500 km">1,500 km</span><span class="what" role="cell">Cable installed<small>Railway signalling and telecom cable across German rail projects</small></span><span class="status ontrack" role="cell">On track</span></div>
+        <div class="board-row" role="row"><span class="flap" role="cell" data-flap="50 km">50 km</span><span class="what" role="cell">High-speed track construction<small>Track built and renewed for Germany's rail network</small></span><span class="status ontrack" role="cell">Delivered</span></div>
+        <div class="board-row" role="row"><span class="flap" role="cell" data-flap="29">29</span><span class="what" role="cell">Turnouts constructed<small>Railway switches planned and installed</small></span><span class="status ontrack" role="cell">Delivered</span></div>
+        <div class="board-row" role="row"><span class="flap" role="cell" data-flap="€10M">€10M</span><span class="what" role="cell">Rail projects led<small>Rail infrastructure projects worth 10 million euros</small></span><span class="status ontrack" role="cell">Delivered</span></div>
+        <div class="board-row" role="row"><span class="flap" role="cell" data-flap="EU">EU</span><span class="what" role="cell">International grants won<small>Erasmus+, European Commission and embassy-funded projects</small></span><span class="status" role="cell">Funded</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 33% PLEDGE -->
+  <section id="pledge" class="pledge">
+    <div class="wrap pledge-grid">
+      <div>
+        <span class="km">km 1.5 · The 33% pledge</span>
+        <h2 class="pledge-h">One third of my life goes to grants and impact.</h2>
+        <p class="pledge-p">33% of my time, knowledge and earnings go back into people: grants for founders, scholarships for outstanding engineers, and mentoring for the next generation.</p>
+        <div class="lifebar" role="img" aria-label="Life bar: 33 percent dedicated to grants and impact">
+          <div class="lb-fill"><span>Grants &amp; impact · 33%</span></div>
+          <div class="lb-rest"><span>Engineering, consulting, family · 67%</span></div>
+        </div>
+        <div class="pledge-list">
+          <div><b>Grants</b><span>Seed funding for unemployed people to run their own business</span></div>
+          <div><b>Scholarships</b><span>The Safayat Hossain and Dr. Rahaman &amp; Hossain scholarships for outstanding projects</span></div>
+          <div><b>Mentoring</b><span>Time with founders, students and young engineers</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY ROUTE MAP -->
+  <section id="journey">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 2.0 · Journey</span>
+        <h2>One line, five stations.</h2>
+        <p>Every stop added a discipline. Select a station to see what was built there.</p>
+      </div>
+      <div class="route">
+        <div class="route-svg-wrap">
+          <svg id="routeSvg" viewBox="0 0 1000 200" role="group" aria-label="Journey route map">
+            <path d="M60 120 C 160 120, 180 60, 280 60 S 400 120, 500 120 L 940 120" fill="none" stroke="#5FC7CF" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+            <path d="M500 120 L 940 120" fill="none" stroke="#FFE45C" stroke-width="6" stroke-linecap="round"/>
+            <g class="ticks" stroke="#FFE45C" stroke-width="2" opacity=".5">
+              <path d="M540 110v20M580 110v20M620 110v20M660 110v20M700 110v20M740 110v20M780 110v20M820 110v20M860 110v20M900 110v20"/>
+            </g>
+          </svg>
+        </div>
+        <p class="route-hint">◆ The water line (blue) becomes the rail line (amber) after Kassel</p>
+        <div class="stop-detail" id="stopDetail" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINES OF WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 3.0 · Work</span>
+        <h2>Four lines of work, one direction.</h2>
+        <p>Infrastructure, water, resources and entrepreneurship. Each one feeds the next.</p>
+      </div>
+      <div class="lines">
+        <article class="line" style="--lc:var(--signal)"><span class="tag">Line R · Rail infrastructure</span><h3>Keeping Germany's trains moving</h3><p>Head of Rail Infrastructure Development at Emser Bahnbau GmbH, leading tendering, planning, procurement, inspection and handover. Certified Fachbauleiter Gleisbau.</p><p class="big"><b>1,500 km</b> cable · <b>50 km</b> high-speed track · <b>29</b> turnouts</p></article>
+        <article class="line" style="--lc:var(--river)"><span class="tag">Line W · Water</span><h3>Safe water where it's scarce</h3><p>Rainwater harvesting systems and training with WaterAid, sanitation in the Rohingya camps of Cox's Bazar, and coastal pond protection with the U.S. State Department.</p><p class="big"><b>10</b> municipalities' sludge reports analysed</p></article>
+        <article class="line" style="--lc:var(--go)"><span class="tag">Line C · Circular economy</span><h3>Waste into value</h3><p>Biogas for waste incineration, activated carbon from hazelnut shells, graphene for water treatment, composting programs in four Turkish cities.</p><p class="big"><b>4</b> Turkish cities · <b>10</b> cities assessed for the OIC</p></article>
+        <article class="line" style="--lc:#E58FB1"><span class="tag">Line E · Entrepreneurship</span><h3>Building organisations</h3><p>Founder of Axiora Vision, Sustainarch and the Türkiye–Bangladesh Health and Humanitarian Aid Association. Yunus &amp; Youth Fellow, one of 26 worldwide.</p><p class="big"><b>3</b> founded · <b>Erasmus</b> Young Entrepreneur 2022</p></article>
+      </div>
+
+      <div style="margin-top:56px">
+        <div class="tabs" role="tablist" aria-label="Project lists">
+          <button class="tab" role="tab" id="tab-rail" aria-selected="true" aria-controls="pane-rail">Rail projects</button>
+          <button class="tab" role="tab" id="tab-comm" aria-selected="false" aria-controls="pane-comm">Community &amp; EU projects</button>
+        </div>
+        <div class="proj-grid" id="pane-rail" role="tabpanel" aria-labelledby="tab-rail" data-cat="rail"></div>
+        <div class="proj-grid" id="pane-comm" role="tabpanel" aria-labelledby="tab-comm" data-cat="community" hidden></div>
+        <p class="proj-hint">Select a project to see details and photos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING -->
+  <section id="consulting">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 3.5 · Consulting</span>
+        <h2>Consulting across borders.</h2>
+        <p>I advise governments, contractors, NGOs and EU consortia worldwide, with projects and consultations across Europe, the Middle East and Asia.</p>
+      </div>
+      <div class="earth-stage">
+        <canvas id="globe" width="760" height="760" role="img" aria-label="Rotating Earth marking the countries where Safayat consults"></canvas>
+      </div>
+      <div class="countries">
+        <span>Germany</span><span>Spain</span><span>Romania</span><span>Bulgaria</span><span>Türkiye</span><span>Saudi Arabia</span><span>Oman</span><span>India</span><span>Bangladesh</span><span>Philippines</span>
+      </div>
+      <div class="consult-cta"><span class="any">+ worldwide, remote or on site</span><a class="btn primary" href="#apply" data-pick="consulting">Request a consultation</a></div>
+      <div class="services">
+        <article class="svc"><span class="svc-n">R</span><div><h4>Rail infrastructure</h4><p>Track construction, turnouts, signalling and telecom cable, from tender to handover.</p></div></article>
+        <article class="svc"><span class="svc-n">E</span><div><h4>Environmental impact assessment</h4><p>EIA frameworks for infrastructure, waste and energy projects.</p></div></article>
+        <article class="svc"><span class="svc-n">W</span><div><h4>Water &amp; waste management</h4><p>Rainwater harvesting, sanitation, waste-to-energy and circular economy.</p></div></article>
+        <article class="svc"><span class="svc-n">G</span><div><h4>EU projects &amp; grants</h4><p>Design and delivery of Erasmus+, Horizon and LIFE projects.</p></div></article>
+        <article class="svc"><span class="svc-n">AI</span><div><h4>AI in civil engineering</h4><p>Bringing data and AI into construction, maintenance and planning.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section id="recognition">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 4.0 · Recognition</span>
+        <h2>Signals along the way.</h2>
+      </div>
+      <div class="awards">
+        <article class="award feature"><span class="yr">2025</span><h3>Eur Ing, European Engineer</h3><p>Awarded by FEANI, the European Federation of National Engineering Associations.</p></article>
+        <article class="award feature"><span class="yr">2024</span><h3>New Face of Civil Engineering</h3><p>American Society of Civil Engineers (ASCE).</p></article>
+        <article class="award feature"><span class="yr">2022</span><h3>Erasmus for Young Entrepreneurs</h3><p>Recognised among young entrepreneurs in the EU.</p></article>
+        <article class="award"><span class="yr">2021</span><h3>Yunus &amp; Youth Fellowship</h3><p>One of 26 emerging social business entrepreneurs.</p></article>
+        <article class="award"><span class="yr">2021</span><h3>International Social Entrepreneurship Competition</h3><p>Award winner, Lithuania.</p></article>
+        <article class="award"><span class="yr">2018</span><h3>Türkiye Bursları Scholarship</h3><p>Fully funded master's in environmental engineering.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUND -->
+  <section id="fund" class="fund">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 5.0 · The Safayat's World Fund</span>
+        <h2>I was given a scholarship. Now I give them.</h2>
+        <p>Türkiye Bursları, Erasmus+ and the Yunus &amp; Youth Fellowship opened the world to me. The Safayat's World Fund backs unemployed founders and outstanding engineers who use AI to modernise civil, transport, water and environmental engineering.</p>
+      </div>
+
+      <div class="grants">
+        <article class="grant lead">
+          <span class="state"><i class="dot" aria-hidden="true"></i>Opening first</span>
+          <h3>Unemployment Startup Fund</h3>
+          <p>Seed funding for unemployed people to start and run their own business, built on AI and modern engineering.</p>
+          <dl>
+            <div><dt>You receive</dt><dd>A seed grant, founder mentorship, help with customers and follow-on funding, and Demo Day</dd></div>
+            <div><dt>Who</dt><dd>Unemployed or recently redundant founders, solo or teams up to 3</dd></div>
+          </dl>
+        </article>
+        <article class="grant lead">
+          <span class="state"><i class="dot" aria-hidden="true"></i>Opening first</span>
+          <h3>Safayat Hossain Scholarship</h3>
+          <p>For outstanding AI projects in <b>transport, modern civil and environmental engineering</b>. Every project is submitted as a business model.</p>
+          <dl>
+            <div><dt>You receive</dt><dd>A scholarship award, expert mentoring, and a showcase to partners and investors</dd></div>
+            <div><dt>Who</dt><dd>Students, graduates and young engineers with an outstanding project</dd></div>
+          </dl>
+        </article>
+        <article class="grant lead">
+          <span class="state"><i class="dot" aria-hidden="true"></i>Opening first</span>
+          <h3>Dr. Rahaman &amp; Hossain Scholarship</h3>
+          <p>For outstanding AI projects in <b>water engineering</b>. Every project is submitted as a business model.</p>
+          <dl>
+            <div><dt>You receive</dt><dd>A scholarship award, expert mentoring, and a showcase to partners and investors</dd></div>
+            <div><dt>Who</dt><dd>Students, graduates and young engineers with an outstanding project</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <h3 class="tracks-title">Every project runs on one of four AI tracks.</h3>
+      <div class="tracks">
+        <div class="trk"><span class="x">AI × 01</span><h4>Transport Engineering</h4><span class="trk-s">Safayat Hossain Scholarship</span><p>Predictive maintenance for track and turnouts, computer-vision inspection, traffic optimisation.</p></div>
+        <div class="trk"><span class="x">AI × 02</span><h4>Water Engineering</h4><span class="trk-s rh">Dr. Rahaman &amp; Hossain Scholarship</span><p>Flood and storm-surge forecasting, smart rainwater harvesting, sensor-based water quality.</p></div>
+        <div class="trk"><span class="x">AI × 03</span><h4>Modern Civil Engineering</h4><span class="trk-s">Safayat Hossain Scholarship</span><p>Digital twins, drone and BIM site monitoring, AI-assisted structural design.</p></div>
+        <div class="trk"><span class="x">AI × 04</span><h4>Environment &amp; Circular Economy</h4><span class="trk-s">Safayat Hossain Scholarship</span><p>Machine-vision waste sorting, optimising waste-to-energy and resource flows.</p></div>
+      </div>
+
+      <div class="finder">
+        <div>
+          <h3>Find your grant</h3>
+          <fieldset>
+            <legend>I am</legend>
+            <div class="chips">
+              <input type="radio" name="who" id="who-student" value="student" checked><label for="who-student">An engineer or student with a project</label>
+              <input type="radio" name="who" id="who-unemp" value="unemployed"><label for="who-unemp">Unemployed, with a business idea</label>
+              <input type="radio" name="who" id="who-partner" value="partner"><label for="who-partner">A partner or donor</label>
+            </div>
+          </fieldset>
+          <fieldset id="fieldSet">
+            <legend>My field</legend>
+            <div class="chips">
+              <input type="radio" name="field" id="f-transport" value="Transport Engineering" checked><label for="f-transport">Transport</label>
+              <input type="radio" name="field" id="f-water" value="Water Engineering"><label for="f-water">Water</label>
+              <input type="radio" name="field" id="f-civil" value="Modern Civil Engineering"><label for="f-civil">Civil</label>
+              <input type="radio" name="field" id="f-env" value="Environment &amp; Circular Economy"><label for="f-env">Environment</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="result" aria-live="polite">
+          <span class="lbl" id="resLbl">Your match</span>
+          <h4 id="resTitle">Safayat Hossain Scholarship · AI × Transport Engineering</h4>
+          <p id="resText">Submit your AI × transport engineering project as a business model: the problem, your solution, customers and costs.</p>
+          <div><a class="btn primary" href="#apply" id="resBtn">Register interest</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDED PROJECTS -->
+  <section id="funded">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 5.5 · Funded projects</span>
+        <h2>Projects powered by Safayat's World.</h2>
+        <p>Every startup, scholarship and research project the Fund supports is shown here, with its story and photos.</p>
+      </div>
+      <div class="tabs center" role="tablist" aria-label="Funded project categories">
+        <button class="tab ftab" role="tab" aria-selected="true" data-cat="startup">Startups</button>
+        <button class="tab ftab" role="tab" aria-selected="false" data-cat="scholarship">Scholarships</button>
+        <button class="tab ftab" role="tab" aria-selected="false" data-cat="research">Research</button>
+      </div>
+      <div class="proj-grid" id="fundedGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 6.0 · Join</span>
+        <h2>One grant changed my life. Let's fund a generation.</h2>
+        <p>I started the Fund with my own money. Individuals, companies, universities and alumni are welcome to build it with me.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier"><h3>Founder or Scholar Sponsor</h3><p>Fund one founder or one scholar for one cycle.</p><span class="rec">Meet them at Demo Day</span></div>
+        <div class="tier"><h3>Fund Supporter</h3><p>Contribute any amount to the shared fund.</p><span class="rec">Supporters wall</span></div>
+        <div class="tier"><h3>Mentor</h3><p>Two hours a month guiding a scholar or founder.</p><span class="rec">Mentor profile</span></div>
+        <div class="tier"><h3>Host Lab or Company</h3><p>Offer lab space, data, or a pilot site.</p><span class="rec">Partner showcase</span></div>
+      </div>
+      <div class="promise"><span><b>Transparency.</b> Annual impact report on every euro.</span><span><b>Efficiency.</b> Funds go straight to grantees.</span><span><b>Connection.</b> Follow the people you back.</span></div>
+      <div class="cta" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px"><a class="btn primary" href="#apply" data-pick="partner">Become a partner</a><a class="btn" href="#apply" data-pick="mentor">Volunteer as a mentor</a></div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 6.5 · Apply</span>
+        <h2>Board the first cohort.</h2>
+        <p>Register for the Fund, request a consultation, or offer support as a partner or mentor.</p>
+      </div>
+      <div class="apply-grid">
+        <aside class="apply-side" aria-live="polite">
+          <div id="sideInfo">
+            <span class="km">What happens next</span>
+            <ol class="next">
+              <li><b>Today.</b> Your registration reaches the Safayat's World team.</li>
+              <li><b>When the call opens.</b> You get the full application pack by email.</li>
+              <li><b>Selection.</b> Panel review, then a short online interview.</li>
+              <li><b>Start.</b> Funding, a mentor, and your cohort.</li>
+            </ol>
+            <p class="small">Applying is free. Grants are not loans and never need repaying.</p>
+          </div>
+          <div id="sentBox" hidden>
+            <span class="km" style="color:var(--go)">Registration ready</span>
+            <h3 id="sentTitle" style="font-size:30px;font-weight:800;margin-top:14px">Thank you.</h3>
+            <p id="sentText" class="small" style="margin-top:10px"></p>
+            <pre id="sentCopy" class="sent-copy"></pre>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+              <button class="btn" type="button" id="copyApp">Copy text</button>
+              <a class="btn" id="mailApp" href="#">Open in email</a>
+              <button class="btn" type="button" id="newApp">New registration</button>
+            </div>
+            <span id="copyAppNote" class="small" style="color:var(--go);display:block;margin-top:8px" aria-live="polite"></span>
+          </div>
+        </aside>
+        <form id="applyForm" class="apply-form" novalidate>
+          <div class="field full">
+            <label for="a-type">I'm applying for</label>
+            <select id="a-type" name="type" required>
+              <option value="Unemployment Startup Fund">Unemployment Startup Fund (run your own business)</option>
+              <option value="Safayat Hossain Scholarship">Safayat Hossain Scholarship (transport, civil, environment)</option>
+              <option value="Dr. Rahaman & Hossain Scholarship">Dr. Rahaman &amp; Hossain Scholarship (water engineering)</option>
+              <option value="Consulting">Consulting request</option>
+              <option value="Partner">Partnership or donation</option>
+              <option value="Mentor">Mentoring</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-name">Full name</label>
+            <input id="a-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="a-email">Email</label>
+            <input id="a-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="a-country">Country</label>
+            <input id="a-country" name="country" type="text" autocomplete="country-name" required>
+          </div>
+          <div class="field">
+            <label for="a-org" id="a-org-label">Current status</label>
+            <input id="a-org" name="organisation" type="text">
+          </div>
+          <div class="field full" id="trackField">
+            <span class="flabel" id="trackLabel">Track</span>
+            <div class="chips vertical" role="radiogroup" aria-labelledby="trackLabel">
+              <input type="radio" name="track" id="t-transport" value="AI × Transport Engineering" checked><label for="t-transport">AI × Transport</label>
+              <input type="radio" name="track" id="t-water" value="AI × Water Engineering"><label for="t-water">AI × Water</label>
+              <input type="radio" name="track" id="t-civil" value="AI × Modern Civil Engineering"><label for="t-civil">AI × Civil</label>
+              <input type="radio" name="track" id="t-env" value="AI × Environment & Circular Economy"><label for="t-env">AI × Environment</label>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="a-idea" id="a-idea-label">Your business idea: the problem, and how AI solves it</label>
+            <textarea id="a-idea" name="idea" rows="5" maxlength="1200" required></textarea>
+            <span class="hint"><span id="ideaCount">0</span> / 1200</span>
+          </div>
+          <div class="field full">
+            <label for="a-links">Links (optional): LinkedIn, CV, portfolio</label>
+            <input id="a-links" name="links" type="text">
+          </div>
+          <div class="field full check">
+            <input id="a-consent" name="consent" type="checkbox" required>
+            <label for="a-consent">I agree that Safayat's World may store these details to contact me about this programme.</label>
+          </div>
+          <p class="form-error" id="formError" role="alert"></p>
+          <div class="field full"><button class="btn primary" type="submit" id="submitBtn">Send registration</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="km">km 7.0 · Research &amp; voice</span>
+        <h2>Questions worth a Ph.D.</h2>
+        <p>Ph.D. in Civil and Environmental Engineering at Ondokuz Mayıs University, expected March 2027. Earlier research at the University of Kassel and for the OIC.</p>
+      </div>
+      <div class="two">
+        <ol class="pubs">
+          <li><span class="y">2024</span><div><a href="https://doi.org/10.34248/bsengineering.1420192">Optimizing resource allocation in the TR83 Black Sea Region of Türkiye: Progress towards an industrial circular economy</a><span class="v">Black Sea Journal of Engineering and Science, 7(5)</span></div></li>
+          <li><span class="y">2022</span><div>Benefits of using biogas as a supplementary fuel in solid waste incineration<span class="v">Climate and Green Deal Cooperation Symposium (accepted)</span></div></li>
+          <li><span class="y">2020</span><div><a href="https://doi.org/10.1007/s40899-020-00479-4">Development of hydropower along the major river basins in South Asia: Benefits for Bangladesh</a><span class="v">Sustainable Water Resources Management, 6(6) · Springer</span></div></li>
+          <li><span class="y">2019</span><div>Contribution of the Sangu River to the livelihoods of local communities<span class="v">4th International Water Conference, ActionAid</span></div></li>
+          <li><span class="y">2019</span><div>Impacts of surface and groundwater quality on human life in Bangladesh: Baniarjan, Gaibandha<span class="v">International Student Symposium, 5(1)</span></div></li>
+        </ol>
+        <div class="media">
+          <h3>Talks &amp; media</h3>
+          <ul>
+            <li><b>Speaker</b>, Economic Diplomacy Forum, Embassy of Bangladesh, Ankara · 2022</li>
+            <li><b>Featured guest</b>, "Emerging Entrepreneurs and Their Dream", Ege TV · 2021</li>
+            <li><b>Speaker</b>, "Entrepreneurs and Engineers", Atakum Girişimci Park · 2021</li>
+            <li><b>Guest speaker</b>, "Türkiye Bursları: Change Your Life", UAP Alumni · 2020</li>
+            <li><b>Featured</b> in The Daily Prothom Alo · 2020</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <span class="km">km 8.0 · Next stop</span>
+        <h2 style="margin-top:22px">Let's build<br>what's <span>next.</span></h2>
+        <p style="color:var(--steel);margin-top:20px;max-width:56ch">Students with a big question, founders between jobs, researchers and partners: write to me.</p>
+        <div class="mail">
+          <code id="mailAddr">hello@safayatho.com</code>
+          <button class="btn" id="copyBtn" type="button">Copy email</button>
+          <span id="copyNote" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<dialog id="projModal" class="pmodal" aria-labelledby="pmTitle">
+  <div class="pm-inner">
+    <button class="pm-close" type="button" id="pmClose" aria-label="Close project details">×</button>
+    <div class="pm-gallery">
+      <div class="pm-stage" id="pmStage"></div>
+      <button class="pm-nav prev" type="button" id="pmPrev" aria-label="Previous photo">‹</button>
+      <button class="pm-nav next" type="button" id="pmNext" aria-label="Next photo">›</button>
+      <div class="pm-thumbs" id="pmThumbs"></div>
+    </div>
+    <div class="pm-body">
+      <span class="proj-tag" id="pmTag"></span>
+      <h3 id="pmTitle"></h3>
+      <p class="pm-meta" id="pmMeta"></p>
+      <p class="pm-sum" id="pmSum"></p>
+      <ul class="pm-list" id="pmList"></ul>
+    </div>
+  </div>
+</dialog>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Safayat's World</span>
+    <nav aria-label="Legal"><a href="#contact">Impressum</a><a href="#contact">Privacy</a><a href="#fund">Grant terms</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- hero canvas: neon river becomes a high-speed rail line ---------- */
+  const cv = document.getElementById('track');
+  const ctx = cv.getContext('2d');
+  let W=0,H=0,dpr=1, drops=[], trainX=0;
+  function size(){
+    dpr = Math.min(window.devicePixelRatio||1,2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    drops = Array.from({length: Math.round(W/9)}, (_,i)=>({u:Math.random(), s:Math.random()*2-1, sp:0.6+Math.random()*0.9}));
+  }
+  const ss = (a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)};
+  const A=()=>W*0.30, B=()=>W*0.62;
+  function yAt(x,side,time){
+    const t = ss(A(),B(),x), cy = H*0.52;
+    const half = (1-t)*Math.max(28,H*0.2) + t*Math.max(12,H*0.075);
+    const wave = (1-t)*((H*0.16)*Math.sin(x*0.011 + time*0.0011) + (H*0.05)*Math.sin(x*0.029 - time*0.0017));
+    return cy + side*half + wave;
+  }
+  function line(side,time,from,to,stroke,width,blur,color){
+    ctx.save(); ctx.strokeStyle=stroke; ctx.lineWidth=width; ctx.lineCap='round'; ctx.shadowBlur=blur; ctx.shadowColor=color;
+    ctx.beginPath(); for(let x=from;x<=to;x+=3){const y=yAt(x,side,time); x===from?ctx.moveTo(x,y):ctx.lineTo(x,y);} ctx.stroke(); ctx.restore();
+  }
+  function frame(time){
+    ctx.clearRect(0,0,W,H);
+    const cy=H*0.52;
+    // holographic perspective grid floor
+    ctx.save(); ctx.globalAlpha=0.5;
+    const hz=cy-H*0.02;
+    for(let k=0;k<9;k++){const p=(k+((time*0.0006)%1))/9, y=hz+Math.pow(p,1.8)*(H-hz); ctx.strokeStyle=`rgba(95,199,207,${0.05+0.18*p})`; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();}
+    for(let k=-12;k<=12;k++){const xb=W/2+k*W/10; ctx.strokeStyle='rgba(95,199,207,0.07)'; ctx.beginPath(); ctx.moveTo(W/2+k*W/60,hz); ctx.lineTo(xb,H); ctx.stroke();}
+    ctx.restore();
+    // river body: glowing gradient fill
+    ctx.beginPath();
+    for(let x=0;x<=B();x+=4) ctx.lineTo(x,yAt(x,-1,time));
+    for(let x=B();x>=0;x-=4) ctx.lineTo(x,yAt(x,1,time));
+    ctx.closePath();
+    const g = ctx.createLinearGradient(0,0,B(),0);
+    g.addColorStop(0,'rgba(95,199,207,0.30)'); g.addColorStop(0.7,'rgba(95,199,207,0.08)'); g.addColorStop(1,'rgba(95,199,207,0)');
+    ctx.fillStyle=g; ctx.fill();
+    // flowing water particles that turn into data squares in the transition zone
+    for(const d of drops){
+      d.u=(d.u + 0.0009*d.sp)%1; const x=d.u*W*0.72;
+      const top=yAt(x,-1,time), bot=yAt(x,1,time), y=(top+bot)/2 + d.s*(bot-top)/2*0.8;
+      const t=ss(A(),B(),x);
+      if(t<0.05){ ctx.fillStyle=`rgba(200,245,250,${0.7*(1-x/(W*0.72))+0.15})`; ctx.beginPath(); ctx.arc(x,y,1.4,0,6.283); ctx.fill(); }
+      else { const sz=2+t*2; ctx.fillStyle=`rgba(255,228,92,${0.9*(1-t*0.6)})`; ctx.fillRect(x-sz/2,y-sz/2,sz,sz); }
+    }
+    // binary readout in the transition zone
+    ctx.font='10px "JetBrains Mono", monospace'; ctx.fillStyle='rgba(255,228,92,0.35)';
+    for(let k=0;k<6;k++){const x=A()+(B()-A())*(k/6)+((time*0.02)%20); ctx.fillText(((Math.floor(time/300)+k)%2?'1011':'0110'), x, cy-H*0.32+ (k%2)*12);}
+    // sleepers as light bars that brighten when the train passes
+    const spacing=20;
+    for(let x=B()-40;x<W;x+=spacing){
+      const t=ss(B()-40,B()+40,x); if(t<=0) continue;
+      const near=Math.max(0,1-Math.abs(x-trainX)/140);
+      ctx.save(); ctx.strokeStyle=`rgba(255,228,92,${(0.18+0.75*near)*t})`; ctx.lineWidth=3; ctx.shadowBlur=near*14; ctx.shadowColor='#FFE45C';
+      ctx.beginPath(); ctx.moveTo(x,yAt(x,-1,time)-7); ctx.lineTo(x,yAt(x,1,time)+7); ctx.stroke(); ctx.restore();
+    }
+    // banks and rails: neon double strokes, teal turning yellow
+    for(const side of [-1,1]){
+      const lg = ctx.createLinearGradient(0,0,W,0);
+      lg.addColorStop(0,'#5FC7CF'); lg.addColorStop(0.42,'#5FC7CF'); lg.addColorStop(0.64,'#FFE45C'); lg.addColorStop(1,'#FFE45C');
+      line(side,time,0,W,lg,6,18,'rgba(95,199,207,0.8)');
+      line(side,time,0,W,'rgba(255,255,255,0.85)',1.2,0,'transparent');
+    }
+    // energy pulses travelling along the rails
+    for(let k=0;k<4;k++){
+      const x=B()+((time*0.25 + k*W*0.12)%(W-B()+80))-40;
+      for(const side of [-1,1]){ const y=yAt(x,side,time); const pg=ctx.createRadialGradient(x,y,0,x,y,14); pg.addColorStop(0,'rgba(255,255,255,0.95)'); pg.addColorStop(1,'rgba(255,228,92,0)'); ctx.fillStyle=pg; ctx.beginPath(); ctx.arc(x,y,14,0,6.283); ctx.fill(); }
+    }
+    // maglev light-train gliding on the rails with a light trail
+    const span=W-B()+260; trainX = B()-120 + ((time*0.32)%span);
+    const tl=Math.min(140,W*0.12), ty=cy;
+    if(trainX>B()-60){
+      const tg=ctx.createLinearGradient(trainX-tl*2.2,0,trainX,0); tg.addColorStop(0,'rgba(255,228,92,0)'); tg.addColorStop(1,'rgba(255,228,92,0.55)');
+      ctx.fillStyle=tg; ctx.fillRect(trainX-tl*2.2,ty-3,tl*2.2-tl,6);
+      ctx.save(); ctx.shadowBlur=24; ctx.shadowColor='#FFE45C';
+      ctx.fillStyle='rgba(14,20,24,0.92)'; ctx.strokeStyle='#FFE45C'; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.moveTo(trainX-tl,ty-7); ctx.lineTo(trainX-12,ty-7); ctx.quadraticCurveTo(trainX+8,ty-6,trainX+14,ty); ctx.quadraticCurveTo(trainX+8,ty+6,trainX-12,ty+7); ctx.lineTo(trainX-tl,ty+7); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle='rgba(95,199,207,0.9)'; for(let w=trainX-tl+10; w<trainX-18; w+=14) ctx.fillRect(w,ty-3,8,3);
+      ctx.fillStyle='#FFFFFF'; ctx.beginPath(); ctx.arc(trainX+11,ty,2.2,0,6.283); ctx.fill();
+    }
+    if(!reduce) requestAnimationFrame(frame);
+  }
+  size(); window.addEventListener('resize',()=>{size(); if(reduce) frame(0);});
+  reduce ? frame(0) : requestAnimationFrame(frame);
+
+  /* ---------- departures board flap (ends on the real value) ---------- */
+  if(!reduce){
+    const chars='0123456789€+,.KMkm ';
+    document.querySelectorAll('.flap').forEach((el,i)=>{
+      const target=el.dataset.flap; let n=0; const steps=14+i*2;
+      const iv=setInterval(()=>{
+        n++;
+        el.textContent = target.split('').map((c,j)=> (n>=steps-(target.length-j)||c===' ') ? c : chars[Math.floor(Math.random()*chars.length)]).join('');
+        if(n>=steps){clearInterval(iv); el.textContent=target;}
+      },45);
+    });
+  }
+
+  /* ---------- route map ---------- */
+  const stops=[
+    {id:'dhaka',x:60,y:120,name:'Dhaka',country:'Bangladesh',when:'2013 – 2018',title:'Foundations in water',color:'#5FC7CF',
+     text:'B.Sc. in Civil Engineering at the University of Asia Pacific, with a thesis on hydropower in South Asia that became a Springer journal paper.',
+     pts:['Project Coordinator, RAiN Forum, on WaterAid-funded rainwater harvesting','Built a digital sanitation app for Dhaka','WASH work in the Rohingya camps, Cox\'s Bazar','3rd place, Truss Bridge Competition; 2nd, National River Olympiad (2017)']},
+    {id:'samsun',x:280,y:60,name:'Samsun',country:'Türkiye',when:'2018 – today',title:'Waste into value',color:'#5FC7CF',
+     text:'Türkiye Bursları scholar. M.Sc. in Environmental Engineering at Ondokuz Mayıs University, now completing a Ph.D. (expected 2027).',
+     pts:['Biogas as a supplementary fuel in waste incineration','Activated carbon from hazelnut shells and cardamom waste','EIA of incineration and landfills in 10 cities for the OIC','EU waste-to-fertilizer youth projects in four cities']},
+    {id:'kassel',x:500,y:120,name:'Kassel',country:'Germany',when:'2021 – 2022',title:'European research',color:'#5FC7CF',
+     text:'Erasmus+ traineeship at the Institute of Water, Waste and Environmental Engineering, University of Kassel, with an international research team.',
+     pts:['Water and waste management research','Data analysis and technical assessments','Yunus & Youth Fellow, one of 26 social entrepreneurs (2021)']},
+    {id:'badajoz',x:700,y:120,name:'Badajoz',country:'Spain',when:'2022',title:'Green transition',color:'#FFE45C',
+     text:'International Project Consultant at Innogestiona Ambiental, building environmental impact frameworks for EU-funded projects.',
+     pts:['Horizon 2020, LIFE and Erasmus+ programmes','Erasmus Twin 4.0, Blue Hen, Gallin Extreme','Erasmus for Young Entrepreneurs awardee (2022)']},
+    {id:'koblenz',x:900,y:120,name:'Koblenz',country:'Germany',when:'2022 – today',title:'Rails across Germany',color:'#FFE45C',
+     text:'Head of Rail Infrastructure Development at Emser Bahnbau GmbH, leading track and signalling projects from tender to handover.',
+     pts:['1,500 km of signalling and telecom cable','50 km of high-speed track construction and 29 turnouts','Rail projects worth €10 million','Eur Ing (2025) and ASCE New Face of Civil Engineering (2024)','Founded the Safayat\u2019s World Fund (2026)']}
+  ];
+  const svg=document.getElementById('routeSvg'), NS='http://www.w3.org/2000/svg', detail=document.getElementById('stopDetail');
+  stops.forEach((s,i)=>{
+    const g=document.createElementNS(NS,'g'); g.setAttribute('class','stop'); g.setAttribute('tabindex','0'); g.setAttribute('role','button');
+    g.setAttribute('aria-label',`${s.name}, ${s.country}, ${s.when}`);
+    const ring=document.createElementNS(NS,'circle'); ring.setAttribute('class','ring'); ring.setAttribute('cx',s.x); ring.setAttribute('cy',s.y); ring.setAttribute('r',12); ring.setAttribute('fill','#0E1418'); ring.setAttribute('stroke',s.color); ring.setAttribute('stroke-width',4);
+    const core=document.createElementNS(NS,'circle'); core.setAttribute('cx',s.x); core.setAttribute('cy',s.y); core.setAttribute('r',4); core.setAttribute('fill','#EEF2F0');
+    const above = s.y<100;
+    const t1=document.createElementNS(NS,'text'); t1.setAttribute('x',s.x); t1.setAttribute('y',above? s.y-28 : s.y+42); t1.setAttribute('text-anchor', i===0?'start': i===stops.length-1?'end':'middle'); t1.setAttribute('fill','#EEF2F0'); t1.setAttribute('font-size','17'); t1.setAttribute('font-weight','600'); t1.textContent=s.name;
+    const t2=document.createElementNS(NS,'text'); t2.setAttribute('x',s.x); t2.setAttribute('y',above? s.y-48 : s.y+62); t2.setAttribute('text-anchor', t1.getAttribute('text-anchor')); t2.setAttribute('fill','#A9B7BD'); t2.setAttribute('font-size','12'); t2.textContent=s.when;
+    g.append(ring,core,t1,t2); svg.appendChild(g);
+    const pick=()=>select(i);
+    g.addEventListener('click',pick);
+    g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});
+    s.el=g;
+  });
+  function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+  function select(i){
+    const s=stops[i];
+    stops.forEach((o,j)=>o.el.classList.toggle('active',j===i));
+    detail.innerHTML=`<div><span class="when">${esc(s.when)}</span><h3>${esc(s.title)}</h3><p class="place">${esc(s.name)}, ${esc(s.country)}</p></div><div><p>${esc(s.text)}</p><ul>${s.pts.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>`;
+  }
+  select(4);
+
+
+
+  /* ---------- AI photo effects ---------- */
+  (function(){
+    const cv=document.getElementById('photoFx'); if(!cv) return;
+    const c=cv.getContext('2d'), S=480;
+    const P=[[.36,.42],[.365,.52],[.39,.62],[.44,.69],[.53,.73],[.62,.69],[.67,.62],[.70,.52],[.71,.42],
+      [.38,.385],[.43,.375],[.48,.385],[.57,.385],[.62,.375],[.67,.385],
+      [.39,.44],[.43,.435],[.47,.44],[.58,.44],[.62,.435],[.66,.44],
+      [.525,.46],[.525,.51],[.49,.53],[.525,.54],[.56,.53],
+      [.47,.58],[.53,.565],[.59,.58],[.53,.60],
+      [.42,.34],[.53,.33],[.64,.34]].map(([x,y])=>[x*S,y*S]);
+    const E=new Set();
+    P.forEach((a,i)=>{P.map((b,j)=>[j,Math.hypot(a[0]-b[0],a[1]-b[1])]).filter(([j])=>j!==i).sort((u,v)=>u[1]-v[1]).slice(0,3).forEach(([j])=>E.add(i<j?i+'-'+j:j+'-'+i));});
+    const edges=[...E].map(k=>k.split('-').map(Number));
+    const words=['RAIL · WATER','AI · ENGINEER','EUR ING','CONSULTANT'];
+    const hud=document.getElementById('hudR'); let wi=0;
+    if(!reduce) setInterval(()=>{wi=(wi+1)%words.length; if(hud) hud.textContent=words.at(wi);},2600);
+    // tilt
+    const fig=document.querySelector('.portrait'), hero=document.querySelector('.hero');
+    if(!reduce && fig && hero){
+      hero.addEventListener('pointermove',e=>{const r=fig.getBoundingClientRect();const dx=(e.clientX-(r.left+r.width/2))/r.width, dy=(e.clientY-(r.top+r.height/2))/r.height;fig.style.transform=`perspective(900px) rotateY(${Math.max(-1,Math.min(1,dx))*10}deg) rotateX(${Math.max(-1,Math.min(1,-dy))*10}deg)`;});
+      hero.addEventListener('pointerleave',()=>{fig.style.transform='';});
+    }
+    function draw(t){
+      c.clearRect(0,0,S,S);
+      const cyc=(t%9000)/9000, vis=cyc<0.45?Math.sin(cyc/0.45*Math.PI):0;
+      if(vis>0.01){
+        const prog=Math.min(1,cyc/0.2);
+        c.lineWidth=1;
+        edges.forEach(([a,b],k)=>{ if(k/edges.length>prog) return; c.strokeStyle=`rgba(95,199,207,${0.55*vis})`; c.beginPath(); c.moveTo(...P[a]); c.lineTo(...P[b]); c.stroke(); });
+        P.forEach(([x,y],i)=>{ const tw=0.6+0.4*Math.sin(t*0.008+i); c.fillStyle=`rgba(255,228,92,${vis*tw})`; c.fillRect(x-2,y-2,4,4); });
+        c.font='600 13px "JetBrains Mono", monospace'; c.fillStyle=`rgba(255,228,92,${vis})`;
+        c.fillText('AI FACE MESH', S*0.72, S*0.47); c.fillStyle=`rgba(95,199,207,${vis})`; c.fillText('TRACKING', S*0.72, S*0.505);
+      }
+      // floating data particles
+      for(let i=0;i<18;i++){const y=(S-((t*0.03+i*67)%S)), x=(i*97)%S; c.fillStyle=`rgba(95,199,207,${0.35*(y/S)})`; c.fillRect(x,y,2,2);}
+      if(!reduce) requestAnimationFrame(draw);
+    }
+    reduce?draw(2000):requestAnimationFrame(draw);
+  })();
+
+  /* ---------- galaxy backdrop ---------- */
+  (function(){
+    const cv=document.getElementById('galaxy'); if(!cv) return;
+    const c=cv.getContext('2d'); let W,H,dpr,stars=[],arms=[],shoot=null,last=0,mx=-999,my=-999,sat=null,rocket=null,smoke=[];
+    addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
+    function rnd(a,b){return a+Math.random()*(b-a)}
+    function build(){
+      dpr=Math.min(window.devicePixelRatio||1,1.5); W=innerWidth; H=innerHeight;
+      cv.width=W*dpr; cv.height=H*dpr; c.setTransform(dpr,0,0,dpr,0,0);
+      const n=Math.round(W*H/2600); stars=[];
+      for(let i=0;i<n;i++){const z=Math.random();stars.push({x:Math.random()*W,y:Math.random()*H*3,z,r:0.3+z*1.3,tw:rnd(0,6.28),sp:rnd(.6,1.8),hue:Math.random()<.12?(Math.random()<.5?'95,199,207':'255,228,92'):'238,242,240'});}
+      arms=[]; const N=Math.min(1400,Math.round(W*0.9));
+      for(let i=0;i<N;i++){const arm=i%3, t=Math.pow(Math.random(),0.7)*4.2;arms.push({arm,t,off:rnd(-.28,.28)*(0.4+t*0.25),r:rnd(.4,1.5),a:rnd(.25,.9),warm:Math.random()<.35});}
+    }
+    function frame(ts){
+      const dt=ts-last; last=ts; const sy=scrollY;
+      c.clearRect(0,0,W,H);
+      // nebula glow
+      const t=ts*0.00004;
+      const neb=[[W*(0.15+0.05*Math.sin(t*3)),H*0.25,W*0.45,'95,199,207',0.07],[W*(0.85+0.04*Math.cos(t*2)),H*0.7,W*0.5,'255,228,92',0.05],[W*0.55,H*(0.05+0.05*Math.sin(t*4)),W*0.35,'120,110,220',0.05]];
+      for(const [x,y,r,col,a] of neb){const g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,`rgba(${col},${a})`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.fillRect(0,0,W,H);}
+      // spiral galaxy, drifts up with scroll
+      const gx=W*0.5, gy=H*0.42 - sy*0.25, rot=ts*0.00003, R=Math.min(W,H)*0.42;
+      if(gy>-R && gy<H+R){
+        const core=c.createRadialGradient(gx,gy,0,gx,gy,R*0.35);core.addColorStop(0,'rgba(255,236,200,0.22)');core.addColorStop(1,'rgba(255,236,200,0)');c.fillStyle=core;c.fillRect(gx-R,gy-R,R*2,R*2);
+        for(const p of arms){
+          const ang=p.t*1.15+p.arm*2.094+rot, rad=(p.t/4.2)*R;
+          const x=gx+Math.cos(ang+p.off)*rad, y=gy+Math.sin(ang+p.off)*rad*0.42;
+          c.fillStyle=p.warm?`rgba(255,228,92,${p.a*0.75})`:`rgba(170,225,230,${p.a*0.7})`;
+          c.fillRect(x,y,p.r,p.r);
+        }
+      }
+      // stars with parallax and twinkle
+      for(const s0 of stars){
+        let y=(s0.y - sy*(0.05+s0.z*0.25))%(H*3); if(y<0) y+=H*3; if(y>H) continue;
+        const a=0.25+0.6*s0.z*(0.6+0.4*Math.sin(s0.tw+ts*0.001*s0.sp));
+        c.fillStyle=`rgba(${s0.hue},${a})`; c.beginPath(); c.arc(s0.x,y,s0.r,0,6.283); c.fill();
+      }
+      // constellation lines around the pointer
+      if(mx>-900){const near=[];for(const s0 of stars){let y=(s0.y - sy*(0.05+s0.z*0.25))%(H*3); if(y<0) y+=H*3; if(y>H) continue; const d=Math.hypot(s0.x-mx,y-my); if(d<150) near.push([s0.x,y,d]); if(near.length>14) break;}
+        c.lineWidth=0.8; for(let i=0;i<near.length;i++){c.strokeStyle=`rgba(255,228,92,${0.5*(1-near[i][2]/150)})`;c.beginPath();c.moveTo(mx,my);c.lineTo(near[i][0],near[i][1]);c.stroke(); if(i){c.strokeStyle=`rgba(95,199,207,${0.25*(1-near[i][2]/150)})`;c.beginPath();c.moveTo(near[i-1][0],near[i-1][1]);c.lineTo(near[i][0],near[i][1]);c.stroke();}}}
+      // satellite crossing
+      if(!sat && Math.random()<0.0025){const l=Math.random()<.5;sat={x:l?-40:W+40,y:rnd(H*0.08,H*0.45),vx:(l?1:-1)*rnd(0.6,1.1),vy:rnd(-0.15,0.15)};}
+      if(sat){const {x,y}=sat;c.save();c.translate(x,y);c.rotate(Math.atan2(sat.vy,sat.vx));c.fillStyle='rgba(200,215,220,0.9)';c.fillRect(-4,-3,8,6);c.fillStyle='rgba(95,199,207,0.85)';c.fillRect(-16,-2,10,4);c.fillRect(6,-2,10,4);c.restore();
+        if(Math.floor(ts/500)%2){c.fillStyle='rgba(255,90,90,0.95)';c.beginPath();c.arc(x,y-5,1.6,0,6.283);c.fill();}
+        sat.x+=sat.vx; sat.y+=sat.vy; if(sat.x<-60||sat.x>W+60) sat=null;}
+      // rocket launch
+      if(!rocket && Math.random()<0.0015){rocket={x:rnd(W*0.1,W*0.9),y:H+30,vy:-rnd(2.2,3.2),drift:rnd(-0.5,0.5)};}
+      if(rocket){const r=rocket; for(let k=0;k<2;k++) smoke.push({x:r.x+rnd(-2,2),y:r.y+16,a:0.5,s:rnd(2,4)});
+        c.save();c.translate(r.x,r.y);c.rotate(r.drift*0.12);
+        const fl=10+Math.random()*8;const fg=c.createLinearGradient(0,10,0,10+fl);fg.addColorStop(0,'rgba(255,240,170,1)');fg.addColorStop(1,'rgba(255,120,40,0)');c.fillStyle=fg;c.beginPath();c.moveTo(-3,10);c.lineTo(3,10);c.lineTo(0,10+fl);c.fill();
+        c.fillStyle='#EEF2F0';c.beginPath();c.moveTo(0,-12);c.quadraticCurveTo(5,-4,4,10);c.lineTo(-4,10);c.quadraticCurveTo(-5,-4,0,-12);c.fill();
+        c.fillStyle='#5FC7CF';c.beginPath();c.arc(0,-2,1.8,0,6.283);c.fill();c.fillStyle='#FFE45C';c.fillRect(-7,5,3,6);c.fillRect(4,5,3,6);c.restore();
+        r.y+=r.vy; r.x+=r.drift; r.vy*=1.004; if(r.y<-60) rocket=null;}
+      for(let k=smoke.length-1;k>=0;k--){const m=smoke[k];m.a-=0.006;m.s+=0.12;if(m.a<=0){smoke.splice(k,1);continue;}c.fillStyle=`rgba(200,210,215,${m.a*0.35})`;c.beginPath();c.arc(m.x,m.y,m.s,0,6.283);c.fill();}
+      // shooting star
+      if(!shoot && Math.random()<0.004){shoot={x:rnd(W*0.2,W),y:rnd(0,H*0.5),vx:-rnd(6,10),vy:rnd(2,4),life:1};}
+      if(shoot){
+        const {x,y,vx,vy}=shoot; const g=c.createLinearGradient(x,y,x-vx*12,y-vy*12);
+        g.addColorStop(0,`rgba(255,255,255,${0.9*shoot.life})`);g.addColorStop(1,'rgba(255,255,255,0)');
+        c.strokeStyle=g;c.lineWidth=1.6;c.beginPath();c.moveTo(x,y);c.lineTo(x-vx*12,y-vy*12);c.stroke();
+        shoot.x+=vx; shoot.y+=vy; shoot.life-=0.012; if(shoot.life<=0||shoot.x<-50||shoot.y>H+50) shoot=null;
+      }
+      if(!reduce) requestAnimationFrame(frame);
+    }
+    build(); addEventListener('resize',()=>{build(); if(reduce) frame(0);});
+    if(reduce){ frame(0); addEventListener('scroll',()=>frame(0),{passive:true}); } else requestAnimationFrame(frame);
+  })();
+
+  /* ---------- consulting earth ---------- */
+  (function(){
+    const g=document.getElementById('globe'); if(!g) return;
+    const c=g.getContext('2d'), S=760, cx=S/2, cy=S/2, R=292, tilt=0.38;
+    const land=[
+      [[70,-165],[72,-140],[70,-100],[75,-80],[60,-65],[47,-53],[44,-66],[35,-76],[25,-80],[30,-90],[28,-97],[20,-97],[15,-92],[8,-78],[10,-84],[16,-95],[20,-105],[30,-115],[40,-124],[48,-125],[58,-137],[60,-147],[55,-165],[65,-168]],
+      [[83,-35],[78,-70],[70,-55],[60,-45],[65,-38],[72,-22]],
+      [[12,-72],[10,-62],[5,-52],[-5,-35],[-23,-41],[-35,-55],[-42,-63],[-55,-68],[-50,-75],[-40,-73],[-18,-71],[-5,-81],[2,-80],[8,-77]],
+      [[71,25],[70,10],[62,5],[58,8],[55,8],[53,4],[51,2],[48,-5],[43,-9],[36,-6],[37,-1],[41,3],[43,6],[44,9],[38,16],[41,19],[37,22],[41,29],[46,30],[52,40],[60,45],[68,40]],
+      [[58,-6],[55,-2],[51,1],[50,-5],[54,-5]],
+      [[37,10],[32,32],[30,33],[22,37],[12,43],[11,51],[2,46],[-10,40],[-25,35],[-34,26],[-34,18],[-17,12],[-5,12],[5,8],[5,-5],[10,-15],[20,-17],[28,-13],[35,-6]],
+      [[30,35],[28,48],[24,52],[26,56],[22,60],[17,55],[13,45],[17,42],[28,35]],
+      [[68,40],[75,80],[77,105],[72,130],[70,160],[65,180],[60,165],[55,160],[52,142],[43,132],[38,122],[30,122],[22,114],[21,108],[10,106],[1,104],[8,98],[16,97],[22,92],[22,88],[15,80],[8,77],[20,72],[25,67],[25,57],[30,48],[37,36],[41,29],[46,30],[52,40],[60,45]],
+      [[7,117],[1,119],[-4,116],[-3,110],[2,109]],[[5,95],[-6,105],[-3,106],[4,99]],
+      [[18,121],[14,124],[7,126],[6,122],[12,120]],[[45,142],[40,141],[34,136],[33,130],[36,136],[41,140]],
+      [[-11,131],[-12,137],[-17,140],[-11,142],[-25,153],[-38,148],[-38,140],[-32,133],[-35,117],[-22,114],[-14,127]],
+      [[-12,49],[-25,47],[-23,43],[-16,44]]
+    ];
+    const inPoly=(la,lo,P)=>{let ins=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const [ya,xa]=P[i],[yb,xb]=P[j];if(((ya>la)!==(yb>la))&&(lo<(xb-xa)*(la-ya)/(yb-ya)+xa))ins=!ins;}return ins;};
+    const dots=[];
+    for(let la=-62;la<=82;la+=2.4){const step=2.4/Math.max(.2,Math.cos(la*Math.PI/180));for(let lo=-180;lo<180;lo+=step){dots.push([la,lo,land.some(P=>inPoly(la,lo,P))]);}}
+    const places=[['Germany',50.4,7.6,1],['Spain',40,-4],['Romania',45.9,25],['Bulgaria',42.7,25.5],['Türkiye',39,35],['Saudi Arabia',24,45],['Oman',21.5,57],['India',21,78],['Bangladesh',23.7,90.4],['Philippines',13,122]];
+    const off={Germany:[-70,-10],Spain:[-50,16],Romania:[10,-12],Bulgaria:[-72,14],'Türkiye':[10,14],'Saudi Arabia':[-104,10],Oman:[10,14],India:[-46,22],Bangladesh:[10,-6],Philippines:[10,4]};
+    const stars=Array.from({length:160},()=>[Math.random()*S,Math.random()*S,Math.random()]);
+    function proj(la,lo,rot){
+      const phi=la*Math.PI/180, lam=(lo+rot)*Math.PI/180;
+      const x=Math.cos(phi)*Math.sin(lam), y=Math.sin(phi), z=Math.cos(phi)*Math.cos(lam);
+      const y2=y*Math.cos(tilt)-z*Math.sin(tilt), z2=y*Math.sin(tilt)+z*Math.cos(tilt);
+      return [cx+x*R, cy-y2*R, z2, x];
+    }
+    function draw(t){
+      const rot=-45-(t*0.004)%360;
+      c.clearRect(0,0,S,S);
+      for(const [x,y,z] of stars){c.fillStyle=`rgba(238,242,240,${0.15+0.5*z*(0.6+0.4*Math.sin(t*0.002+x))})`;c.fillRect(x,y,1.4,1.4);}
+      const atm=c.createRadialGradient(cx,cy,R*0.9,cx,cy,R*1.35);atm.addColorStop(0,'rgba(95,199,207,0.35)');atm.addColorStop(1,'rgba(95,199,207,0)');c.fillStyle=atm;c.beginPath();c.arc(cx,cy,R*1.35,0,6.283);c.fill();
+      const sea=c.createRadialGradient(cx-R*0.35,cy-R*0.4,R*0.1,cx,cy,R);sea.addColorStop(0,'#1d4e5a');sea.addColorStop(0.7,'#0d2229');sea.addColorStop(1,'#071116');c.fillStyle=sea;c.beginPath();c.arc(cx,cy,R,0,6.283);c.fill();
+      // back orbit ring
+      const ring=(front)=>{c.save();c.translate(cx,cy);c.rotate(-0.35);c.beginPath();c.ellipse(0,0,R*1.26,R*0.3,0,front?0:Math.PI,front?Math.PI:2*Math.PI);c.strokeStyle='rgba(255,228,92,0.35)';c.lineWidth=1.5;c.setLineDash([2,6]);c.stroke();c.setLineDash([]);
+        const a=(t*0.0006)%(2*Math.PI), sx=Math.cos(a)*R*1.26, sy=Math.sin(a)*R*0.3; if((Math.sin(a)>0)===front){c.fillStyle='#FFE45C';c.fillRect(sx-5,sy-2,10,4);c.fillStyle='#5FC7CF';c.fillRect(sx-12,sy-1.5,5,3);c.fillRect(sx+7,sy-1.5,5,3);c.beginPath();c.arc(sx,sy,8+3*Math.sin(t*0.01),0,6.283);c.strokeStyle='rgba(255,228,92,0.4)';c.stroke();}
+        c.restore();};
+      for(const [la,lo,isL] of dots){const [x,y,z,xs]=proj(la,lo,rot); if(z<0) continue; const shade=0.35+0.65*Math.max(0,(z*0.7-xs*0.3+0.3));
+        if(isL){c.fillStyle=`rgba(150,230,236,${0.25+0.7*shade})`;c.fillRect(x-1.6,y-1.6,3.2,3.2);} else {c.fillStyle=`rgba(95,199,207,${0.06+0.1*shade})`;c.fillRect(x-0.8,y-0.8,1.6,1.6);} }
+      const night=c.createLinearGradient(cx-R,0,cx+R,0);night.addColorStop(0.55,'rgba(4,8,10,0)');night.addColorStop(1,'rgba(4,8,10,0.55)');c.fillStyle=night;c.beginPath();c.arc(cx,cy,R,0,6.283);c.fill();
+      ring(false);
+      const home=proj(50.4,7.6,rot);
+      for(const [name,la,lo,isHome] of places){
+        const [x,y,z]=proj(la,lo,rot); if(z<0.05) continue;
+        if(!isHome && home[2]>0.05){const mx=(home[0]+x)/2, my=(home[1]+y)/2-60*Math.min(1,Math.hypot(x-home[0],y-home[1])/200);c.beginPath();c.moveTo(home[0],home[1]);c.quadraticCurveTo(mx,my,x,y);c.strokeStyle=`rgba(255,228,92,${0.55*z})`;c.lineWidth=1.6;c.stroke();
+          const k=((t*0.0005+la*0.01)%1), bx=(1-k)*(1-k)*home[0]+2*(1-k)*k*mx+k*k*x, by=(1-k)*(1-k)*home[1]+2*(1-k)*k*my+k*k*y;c.fillStyle='#FFFFFF';c.beginPath();c.arc(bx,by,2,0,6.283);c.fill();}
+        const pulse=reduce?0:(Math.sin(t*0.004+la)*0.5+0.5);
+        c.beginPath();c.arc(x,y,7+pulse*8,0,6.283);c.fillStyle=`rgba(255,228,92,${0.2*z})`;c.fill();
+        c.beginPath();c.arc(x,y,isHome?6:4.5,0,6.283);c.fillStyle='#FFE45C';c.fill();
+        c.font='600 17px "JetBrains Mono", monospace';c.fillStyle=`rgba(238,242,240,${0.35+0.65*z})`;const o=off[name];c.fillText(name,x+o[0],y+o[1]);
+      }
+      ring(true);
+      if(!reduce) requestAnimationFrame(draw);
+    }
+    reduce?draw(0):requestAnimationFrame(draw);
+  })();
+
+  /* ---------- 33% counter ---------- */
+  (function(){
+    const el=document.getElementById('pct'); if(!el||reduce) return; // pct removed with the shirt
+    let n=0; const iv=setInterval(()=>{n+=1; el.textContent=n+'%'; if(n>=33){clearInterval(iv);el.textContent='33%';}},40);
+  })();
+
+
+  /* ---------- projects: data, cards, details modal ----------
+     To add a project or photos, edit PROJECTS below. Put photo files in a
+     "projects" folder next to index.html and list them, e.g.
+     photos:['projects/riedbahn-1.jpg','projects/riedbahn-2.jpg']. */
+  const PROJECTS=[
+    {id:'riedbahn',cat:'rail',tag:'Signalling & telecom',title:'Riedbahn',place:'Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'s8',cat:'rail',tag:'Signalling & telecom',title:'S8 North Berlin',place:'Berlin, Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'bme',cat:'rail',tag:'Track construction',title:'Bad Münstereifel – Euskirchen',place:'North Rhine-Westphalia, Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'estw',cat:'rail',tag:'Signalling & telecom',title:'ESTW Staffel · Hadamar · Diez · Limburg',place:'Hesse / Rhineland-Palatinate, Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'regensburg',cat:'rail',tag:'Track renovation',title:'Regensburg',place:'Bavaria, Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'turnouts',cat:'rail',tag:'Turnouts',title:'Turnout construction programme',place:'Germany',years:'',summary:'Project details coming soon.',points:[],photos:[]},
+    {id:'shine',cat:'community',tag:'Erasmus+ KA152',title:'SHINE4Youth',place:'Bulgaria',years:'2022–2023',summary:'Inclusive non-formal education on healthy, organic food for young people.',points:['European youth exchange','Healthy and organic food education'],photos:[]},
+    {id:'w2f',cat:'community',tag:'Erasmus+ KA152',title:'W2F Waste to Fertilizer',place:'Türkiye, France, Germany, Romania',years:'2021–2022',summary:'Youth action on waste reduction, composting and recycling.',points:['Composting and recycling workshops','Partners in four countries'],photos:[]},
+    {id:'wme',cat:'community',tag:'Embassy of France',title:'Waste Management Education',place:'Adana, Istanbul, Izmir, Samsun',years:'2021–2022',summary:'Rapid composting of organic waste into fertiliser.',points:['Training in four Turkish cities'],photos:[]},
+    {id:'eu-es',cat:'community',tag:'Horizon 2020 · LIFE · Erasmus+',title:'Erasmus Twin 4.0, Blue Hen, Gallin Extreme',place:'Spain',years:'2022',summary:'Environmental impact frameworks and green transition strategies.',points:['International Project Consultant, Innogestiona Ambiental'],photos:[]},
+    {id:'wash',cat:'community',tag:'WaterAid',title:'Rainwater harvesting & WASH',place:"Bangladesh, Cox's Bazar",years:'2017–2018',summary:'Training, demonstration systems, a sanitation app for Dhaka and refugee-camp WASH.',points:['Rainwater harvesting design and training','Digital sanitation app for Dhaka','WASH in the Rohingya camps'],photos:[]},
+    {id:'ponds',cat:'community',tag:'U.S. State Department',title:'Coastal pond protection',place:'Southern Bangladesh',years:'2015–2016',summary:'Protecting freshwater ponds from storm surges.',points:[],photos:[]}
+    // Funded projects: add entries with cat:'startup', 'scholarship' or 'research'
+  ];
+  const ICON={
+    rail:'<svg viewBox="0 0 64 64" fill="none"><path d="M14 58L26 6M50 58L38 6" stroke="#FFE45C" stroke-width="3"/><path d="M18 46h28M21 34h22M24 22h16M26 12h12" stroke="#FFE45C" stroke-width="2" opacity=".6"/></svg>',
+    community:'<svg viewBox="0 0 64 64" fill="none"><path d="M32 6C22 22 16 30 16 40a16 16 0 0032 0c0-10-6-18-16-34z" stroke="#5FC7CF" stroke-width="3"/><path d="M24 42a8 8 0 008 8" stroke="#5FC7CF" stroke-width="2" opacity=".6"/></svg>',
+    startup:'<svg viewBox="0 0 64 64" fill="none"><path d="M32 4c10 8 14 20 12 34H20C18 24 22 12 32 4z" stroke="#FFE45C" stroke-width="3"/><circle cx="32" cy="24" r="5" stroke="#5FC7CF" stroke-width="2"/><path d="M20 38l-8 10h10M44 38l8 10H42M28 46l4 12 4-12" stroke="#FFE45C" stroke-width="2"/></svg>',
+    scholarship:'<svg viewBox="0 0 64 64" fill="none"><path d="M4 24L32 12l28 12-28 12z" stroke="#FFE45C" stroke-width="3"/><path d="M16 30v14c8 6 24 6 32 0V30" stroke="#5FC7CF" stroke-width="2"/></svg>',
+    research:'<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="5" fill="#FFE45C"/><ellipse cx="32" cy="32" rx="26" ry="10" stroke="#5FC7CF" stroke-width="2"/><ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(60 32 32)" stroke="#5FC7CF" stroke-width="2"/><ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(-60 32 32)" stroke="#FFE45C" stroke-width="2"/></svg>'
+  };
+  const esc2=t=>{const d=document.createElement('div');d.textContent=t;return d.innerHTML;};
+  function card(pj){
+    const thumb=pj.photos.length?`<img src="${esc2(pj.photos[0])}" alt="" loading="lazy">`:ICON[pj.cat]||'';
+    const count=pj.photos.length?`<span class="count">${pj.photos.length} photo${pj.photos.length>1?'s':''}</span>`:'';
+    const meta=[pj.place,pj.years].filter(Boolean).join(' · ');
+    return `<button class="proj" type="button" data-id="${esc2(pj.id)}"><span class="proj-thumb">${thumb}${count}</span><span class="proj-tag">${esc2(pj.tag)}</span><h4>${esc2(pj.title)}</h4>${meta?`<span class="proj-meta">${esc2(meta)}</span>`:''}<span class="proj-open">View details →</span></button>`;
+  }
+  const SLOT={startup:['Your startup here','The first startups from the Unemployment Startup Fund will appear here.'],scholarship:['Scholarship projects coming','Safayat Hossain and Dr. Rahaman & Hossain scholars will be featured here.'],research:['Funded research coming','Research supported by the Fund will be shown here with results and photos.']};
+  function slot(cat){return `<div class="proj slot"><span class="proj-thumb">${ICON[cat]}</span><span class="proj-tag">First call · 2027</span><h4>${SLOT[cat][0]}</h4><span class="proj-meta">${SLOT[cat][1]}</span></div>`;}
+  function renderCat(el,cat){
+    const list=PROJECTS.filter(x=>x.cat===cat);
+    el.innerHTML = list.length ? list.map(card).join('') : slot(cat)
+      + `<div class="proj slot"><span class="proj-thumb">${ICON[cat]}</span><span class="proj-tag">Story &amp; photos</span><h4>Every project gets its own page</h4><span class="proj-meta">Photos, the team, and the results achieved with the funding.</span></div>`
+      + `<a class="proj slot" href="#apply" style="text-decoration:none"><span class="proj-thumb">${ICON[cat]}</span><span class="proj-tag">Be the first</span><h4>Apply for funding</h4><span class="proj-open">Register interest →</span></a>`;
+  }
+  document.querySelectorAll('.proj-grid[data-cat]').forEach(el=>renderCat(el,el.dataset.cat));
+  const fg=document.getElementById('fundedGrid'); renderCat(fg,'startup');
+  document.querySelectorAll('.ftab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.ftab').forEach(o=>o.setAttribute('aria-selected',o===t));renderCat(fg,t.dataset.cat);}));
+  // modal
+  const dlg=document.getElementById('projModal'), stage=document.getElementById('pmStage'), thumbs=document.getElementById('pmThumbs');
+  let cur=null, idx=0;
+  function show(i){
+    const ph=cur.photos; idx=(i+ph.length)%ph.length;
+    stage.innerHTML=`<img src="${esc2(ph.at(idx))}" alt="${esc2(cur.title)}, photo ${idx+1} of ${ph.length}">`;
+    thumbs.querySelectorAll('button').forEach((b,k)=>b.setAttribute('aria-current',k===idx));
+  }
+  function openProject(id){
+    cur=PROJECTS.find(x=>x.id===id); if(!cur) return;
+    document.getElementById('pmTag').textContent=cur.tag;
+    document.getElementById('pmTitle').textContent=cur.title;
+    document.getElementById('pmMeta').textContent=[cur.place,cur.years].filter(Boolean).join(' · ');
+    document.getElementById('pmSum').textContent=cur.summary;
+    document.getElementById('pmList').innerHTML=cur.points.map(x=>`<li>${esc2(x)}</li>`).join('');
+    const has=cur.photos.length>0;
+    document.getElementById('pmPrev').hidden=document.getElementById('pmNext').hidden=cur.photos.length<2;
+    thumbs.innerHTML=has?cur.photos.map((src,k)=>`<button type="button" aria-label="Photo ${k+1}"><img src="${esc2(src)}" alt=""></button>`).join(''):'';
+    thumbs.querySelectorAll('button').forEach((b,k)=>b.addEventListener('click',()=>show(k)));
+    if(has) show(0); else stage.innerHTML=`<div class="pm-empty">${ICON[cur.cat]}<span>Photos coming soon</span></div>`;
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  }
+  document.addEventListener('click',e=>{const b=e.target.closest('button.proj[data-id]'); if(b) openProject(b.dataset.id);});
+  document.getElementById('pmClose').addEventListener('click',()=>dlg.close());
+  document.getElementById('pmPrev').addEventListener('click',()=>show(idx-1));
+  document.getElementById('pmNext').addEventListener('click',()=>show(idx+1));
+  dlg.addEventListener('click',e=>{if(e.target===dlg) dlg.close();});
+  dlg.addEventListener('keydown',e=>{if(!cur||cur.photos.length<2) return; if(e.key==='ArrowRight') show(idx+1); if(e.key==='ArrowLeft') show(idx-1);});
+
+  /* ---------- tabs ---------- */
+  const tabs=[...document.querySelectorAll('.tab:not(.ftab)')];
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on;});
+  }));
+
+  /* ---------- grant finder ---------- */
+  const fieldSet=document.getElementById('fieldSet');
+  function updateFinder(){
+    const who=document.querySelector('input[name=who]:checked').value;
+    const field=document.querySelector('input[name=field]:checked').value;
+    const T=document.getElementById('resTitle'),P=document.getElementById('resText'),B=document.getElementById('resBtn'),L=document.getElementById('resLbl');
+    fieldSet.hidden = who==='partner';
+    if(who==='student'){L.textContent='Your match';T.textContent=`${field==='Water Engineering'?'Dr. Rahaman & Hossain Scholarship':'Safayat Hossain Scholarship'} · AI × ${field}`;P.textContent=`Submit your AI × ${field.toLowerCase()} project as a business model: the problem, your solution, customers and costs.`;B.textContent='Register interest';}
+    else if(who==='unemployed'){L.textContent='Your match';T.textContent=`Unemployment Startup Fund · AI × ${field}`;P.textContent=`Start and run your own business applying AI to ${field.toLowerCase()}. Apply with a 2-page business idea, a 2-minute pitch and proof of unemployment.`;B.textContent='Register interest';}
+    else{L.textContent='Ways to give';T.textContent='Fund a scholar, a founder, or a named scholarship';P.textContent='Sponsor one founder or scholar for a cycle, contribute to the shared fund, or join as a mentor or host lab.';B.textContent='Become a partner';}
+  }
+  document.querySelectorAll('.finder input').forEach(i=>i.addEventListener('change',updateFinder));
+  updateFinder();
+
+  /* ---------- application form ---------- */
+  // To collect submissions on the hosted site, paste a form endpoint here
+  // (for example a Formspree or Tally webhook URL). Left empty, the form
+  // prepares the registration as an email to CONTACT_EMAIL instead.
+  const FORM_ENDPOINT = '';
+  const CONTACT_EMAIL = 'hello@safayatho.com';
+
+  const form=document.getElementById('applyForm'), typeSel=document.getElementById('a-type');
+  const orgLabel=document.getElementById('a-org-label'), ideaLabel=document.getElementById('a-idea-label');
+  const trackField=document.getElementById('trackField'), idea=document.getElementById('a-idea'), ideaCount=document.getElementById('ideaCount');
+  const formError=document.getElementById('formError'), submitBtn=document.getElementById('submitBtn');
+  const sideInfo=document.getElementById('sideInfo'), sentBox=document.getElementById('sentBox');
+  const copyLabels={
+    'Unemployment Startup Fund':['Current status (e.g. unemployed since 2026)','Your business idea: the problem, and how AI solves it',true],
+    'Safayat Hossain Scholarship':['University, company or current role','Your project as a business model: problem, solution, customers, costs',true],
+    'Dr. Rahaman & Hossain Scholarship':['University, company or current role','Your project as a business model: problem, solution, customers, costs',true],
+    'Consulting':['Organisation','What do you need help with? Scope, location and timeline',false],
+    'Partner':['Organisation (optional)','How would you like to support the Fund?',false],
+    'Mentor':['Current role and organisation','What could you mentor on?',false]
+  };
+  function syncType(){
+    const c=copyLabels[typeSel.value];
+    orgLabel.textContent=c[0]; ideaLabel.textContent=c[1]; trackField.hidden=!c[2];
+    const isRH=typeSel.value==='Dr. Rahaman & Hossain Scholarship', isSH=typeSel.value==='Safayat Hossain Scholarship';
+    ['t-transport','t-civil','t-env'].forEach(id=>{const i=document.getElementById(id);i.hidden=isRH;document.querySelector(`label[for=${id}]`).hidden=isRH;});
+    const w=document.getElementById('t-water');w.hidden=isSH;document.querySelector('label[for=t-water]').hidden=isSH;
+    if(isRH) w.checked=true; else if(isSH && w.checked) document.getElementById('t-transport').checked=true;
+  }
+  typeSel.addEventListener('change',syncType);
+  idea.addEventListener('input',()=>{ideaCount.textContent=idea.value.length;});
+  function pickType(v){ typeSel.value=v; syncType(); }
+
+  // finder + join buttons preselect the form
+  document.getElementById('resBtn').addEventListener('click',()=>{
+    const who=document.querySelector('input[name=who]:checked').value;
+    const field=document.querySelector('input[name=field]:checked').id.replace('f-','t-');
+    pickType(who==='student'?(field==='t-water'?'Dr. Rahaman & Hossain Scholarship':'Safayat Hossain Scholarship'):who==='unemployed'?'Unemployment Startup Fund':'Partner');
+    const tr=document.getElementById(field); if(tr) tr.checked=true;
+  });
+  document.querySelectorAll('[data-pick]').forEach(b=>b.addEventListener('click',()=>pickType({mentor:'Mentor',consulting:'Consulting'}[b.dataset.pick]||'Partner')));
+
+  function collect(){
+    const fd=new FormData(form), o={};
+    fd.forEach((v,k)=>{o[k]=typeof v==='string'?v.trim():v;});
+    if(trackField.hidden) delete o.track;
+    return o;
+  }
+  function validate(){
+    let bad=[];
+    form.querySelectorAll('[required]').forEach(el=>{
+      const ok = el.type==='checkbox' ? el.checked : (el.value.trim()!=='' && (el.type!=='email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())));
+      el.setAttribute('aria-invalid',ok?'false':'true'); if(!ok) bad.push(el);
+    });
+    if(bad.length){
+      const em=bad.find(e=>e.type==='email'&&e.value.trim());
+      formError.textContent = em ? 'Check the email address, then send again.' : 'Fill in the highlighted fields, then send again.';
+      bad[0].focus(); return false;
+    }
+    formError.textContent=''; return true;
+  }
+  function asText(o){
+    const lines=[`Programme: ${o.type}`,`Name: ${o.name}`,`Email: ${o.email}`,`Country: ${o.country}`];
+    if(o.organisation) lines.push(`${orgLabel.textContent}: ${o.organisation}`);
+    if(o.track) lines.push(`Track: ${o.track}`);
+    lines.push('',`${ideaLabel.textContent}:`,o.idea);
+    if(o.links) lines.push('',`Links: ${o.links}`);
+    return lines.join('\n');
+  }
+  function showSent(o,sent){
+    const text=asText(o);
+    document.getElementById('sentTitle').textContent=`Thank you, ${o.name.split(' ')[0]}.`;
+    document.getElementById('sentText').textContent= sent
+      ? `Your registration for the ${o.type} has been received. We'll write to ${o.email} when the call opens.`
+      : `Your registration is ready. Send it to ${CONTACT_EMAIL} by opening it in your email app, or copy the text and paste it into an email.`;
+    document.getElementById('sentCopy').textContent=text;
+    const mail=document.getElementById('mailApp');
+    mail.hidden=sent;
+    mail.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Safayat\u2019s World: '+o.type+' – '+o.name)}&body=${encodeURIComponent(text)}`;
+    sideInfo.hidden=true; sentBox.hidden=false;
+  }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!validate()) return;
+    const o=collect();
+    if(!FORM_ENDPOINT){ showSent(o,false); return; }
+    submitBtn.disabled=true; submitBtn.textContent='Sending…';
+    try{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(o)});
+      if(!r.ok) throw new Error(r.status);
+      showSent(o,true); form.reset(); syncType(); ideaCount.textContent='0';
+    }catch(err){
+      formError.textContent=`The registration didn't go through. Try again, or email ${CONTACT_EMAIL}.`;
+      showSent(o,false);
+    }finally{ submitBtn.disabled=false; submitBtn.textContent='Send registration'; }
+  });
+  document.getElementById('copyApp').addEventListener('click',()=>{
+    const pre=document.getElementById('sentCopy'), note=document.getElementById('copyAppNote');
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Selected. Press Ctrl+C to copy.';};
+    try{navigator.clipboard.writeText(pre.textContent).then(()=>{note.textContent='Copied.';},fallback);}catch(err){fallback();}
+  });
+  document.getElementById('newApp').addEventListener('click',()=>{sentBox.hidden=true;sideInfo.hidden=false;document.getElementById('copyAppNote').textContent='';typeSel.focus();});
+  syncType();
+
+  /* ---------- copy email ---------- */
+  const copyBtn=document.getElementById('copyBtn'),note=document.getElementById('copyNote'),addr=document.getElementById('mailAddr');
+  copyBtn.addEventListener('click',()=>{
+    const text=addr.textContent;
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(addr);const s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Selected. Press Ctrl+C to copy.';};
+    try{navigator.clipboard.writeText(text).then(()=>{note.textContent='Copied.';},fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+
+</body>
+</html>
